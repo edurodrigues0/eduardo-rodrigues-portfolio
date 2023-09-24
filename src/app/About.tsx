@@ -61,7 +61,7 @@ export function About() {
   ]
   
   return (
-    <div id="about" className="px-10 py-10 h-screen max-md:h-full w-full flex flex-col items-center justify-start">
+    <div id="about" className="px-10 py-10 w-full flex flex-col items-center justify-start">
       
       <h1 className="text-4xl max-md:text-2xl max-sm:text-lg mb-20">ABOUT ME</h1>
       
@@ -99,7 +99,7 @@ export function About() {
       <h1 className="mt-12 max-sm:text-sm">
         <span className="text-primary">My</span> Skills
       </h1>
-      <div className="mt-4 flex w-full gap-4 max-md:flex-col">
+      <div className="mt-4 flex gap-4 max-md:w-full max-md:flex-col">
         {
           skills.map(skill => {
             return (
