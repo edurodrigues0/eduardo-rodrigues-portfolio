@@ -41,36 +41,36 @@ export function Contact() {
         Contact me
       </h1>
 
-      <div className="w-full flex justify-between">
-        <Card className="flex items-center gap-4 p-4 w-96">
-          <MdAlternateEmail className="text-primary" size={36} />
+      <div className="w-full flex justify-between flex-wrap max-sm:flex-col max-sm:items-center max-md:gap-1 max-sm:gap-4">
+        <Card className="flex items-center gap-4 p-4 w-80 max-md:w-52">
+          <MdAlternateEmail className="text-primary text-4xl max-md:text-3xl max-sm:text-2xl" />
           <div className="flex flex-col">
-            <span>Email</span>
-            <span>name@example.com</span>
+            <span className="text-bold max-md:text-sm">Email</span>
+            <span className="text-muted-foreground max-md:text-xs">name@example.com</span>
           </div>
         </Card>
 
-        <Card className="flex items-center gap-4 p-4 w-96">
-          <MdAlternateEmail className="text-primary" size={36} />
+        <Card className="flex items-center gap-4 p-4 w-80 max-md:w-52">
+          <MdAlternateEmail className="text-primary text-4xl max-md:text-3xl max-sm:text-2xl" />
           <div className="flex flex-col">
-            <span>Email</span>
-            <span>name@example.com</span>
+            <span className="text-bold max-md:text-sm">Email</span>
+            <span className="text-muted-foreground max-md:text-xs">name@example.com</span>
           </div>
         </Card>
 
-        <Card className="flex items-center gap-4 p-4 w-96">
-          <MdAlternateEmail className="text-primary" size={36} />
+        <Card className="flex items-center gap-4 p-4 w-80 max-md:w-52">
+          <MdAlternateEmail className="text-primary text-4xl max-md:text-3xl max-sm:text-2xl" />
           <div className="flex flex-col">
-            <span>Email</span>
-            <span>name@example.com</span>
+            <span className="text-bold max-md:text-sm">Email</span>
+            <span className="text-muted-foreground max-md:text-xs">name@example.com</span>
           </div>
         </Card>
 
-        <Card className="flex items-center gap-4 p-4 w-96">
-          <MdAlternateEmail className="text-primary" size={36} />
+        <Card className="flex items-center gap-4 p-4 w-80 max-md:w-52">
+          <MdAlternateEmail className="text-primary text-4xl max-md:text-3xl max-sm:text-2xl" />
           <div className="flex flex-col">
-            <span>Email</span>
-            <span>name@example.com</span>
+            <span className="text-bold max-md:text-sm">Email</span>
+            <span className="text-muted-foreground max-md:text-xs">name@example.com</span>
           </div>
         </Card>
       </div>
@@ -84,11 +84,11 @@ export function Contact() {
           <span className="text-primary">Contact</span> Form
         </h1>
 
-        <div className="p-8 w-full flex flex-col bg-secondary rounded-lg mt-12">
-          <div className="flex items-center justify-between gap-12">
-            <div className="flex flex-col gap-8">
+        <div className="p-8 max-sm:p-4 w-full max-sm:w-80 flex flex-col bg-secondary rounded-lg mt-12">
+          <div className="flex max-sm:flex-col items-center justify-between gap-12 max-sm:gap-4">
+            <div className="flex flex-col gap-8 max-sm:gap-4">
               <Input
-                className="w-[40rem]"
+                className="w-[40rem] max-lg:w-96 max-md:w-72"
                 type="text"
                 placeholder="Full name"
                 required
@@ -97,7 +97,7 @@ export function Contact() {
               />
 
               <Input
-                className="w-[40rem]"
+                className="w-[40rem] max-lg:w-96 max-md:w-72"
                 type="email"
                 placeholder="Email address"
                 required
@@ -106,7 +106,7 @@ export function Contact() {
               />
 
               <Input
-                className="w-[40rem]"
+                className="w-[40rem] max-lg:w-96 max-md:w-72"
                 type="text"
                 placeholder="Subject"
                 required
@@ -116,7 +116,7 @@ export function Contact() {
             </div>
 
             <Textarea
-              className="resize-none h-full"
+              className="resize-none h-full max-sm:w-72 max-sm:h-56"
               placeholder="Your message here..."
               required
               name="message"
@@ -129,12 +129,12 @@ export function Contact() {
              <button
                 disabled={isSubmiting}
                 type="submit"
-                className="btn bg-primary mt-12 self-center w-52 text-bold hover:bg-orange-700"
+                className="btn bg-primary mt-12 max-sm:mt-6 self-center w-52 text-bold hover:bg-orange-700"
               >
                 Send
               </button>
             ) : (
-              <button disabled className="btn mt-12 self-center w-52 text-bold disabled:bg-green-600 disabled:text-green-50">
+              <button disabled className="btn mt-12 max-sm:mt-6 self-center w-52 text-bold disabled:bg-green-600 disabled:text-green-50">
                 Success!
               </button>
             )
