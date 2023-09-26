@@ -1,4 +1,5 @@
 import { About } from './About'
+import { Contact } from './Contact'
 import { FirstPage } from '@/app/FirstPage'
 import { Layout } from '@/layout/Layout'
 import { Project } from './Project'
@@ -16,6 +17,8 @@ export default function Home() {
         
         <Project />
         <Separator className='bg-white' />
+
+        <Contact />
       </main>
     </Layout>
   )
