@@ -1,13 +1,54 @@
 "use client";
 
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FormEvent, MutableRefObject, useRef, useState } from "react";
+import { MdAlternateEmail, MdWhatsapp } from "react-icons/md";
 
 import { Card } from "@/components/ui/card";
 import { ENV } from "@/env";
 import { Input } from "@/components/ui/input";
-import { MdAlternateEmail } from "react-icons/md";
 import { Textarea } from "@/components/ui/textarea";
 import emailjs from "@emailjs/browser";
+
+// Array de Objeto da social midia do usuario
+const socialMidias = [
+  {
+    id: 1,
+    title: "Linkedin",
+    icon: (
+      <FaLinkedin className="text-primary text-4xl max-md:text-3xl max-sm:text-xl" />
+    ),
+    user: "eduardo-rodrigues-93b66518a",
+    link: "https://www.linkedin.com/in/eduardo-rodrigues-93b66518a/",
+  },
+  {
+    id: 2,
+    title: "Github",
+    user: "@EduRodriguesDev",
+    icon: (
+      <FaGithub className="text-primary text-4xl max-md:text-3xl max-sm:text-xl" />
+    ),
+    link: "https://github.com/EduRodriguesDev",
+  },
+  {
+    id: 3,
+    title: "Instagram",
+    user: "@edurodriigues0",
+    icon: (
+      <FaInstagram className="text-primary text-4xl max-md:text-3xl max-sm:text-xl" />
+    ),
+    link: "https://www.instagram.com/edurodriigues0/",
+  },
+  {
+    id: 4,
+    title: "Whatsapp",
+    user: "+55 (34) 9 9824-9953",
+    icon: (
+      <MdWhatsapp className="text-primary text-4xl max-md:text-3xl max-sm:text-xl" />
+    ),
+    link: "https://web.whatsapp.com/send?phone=5534998249953",
+  },
+];
 
 export function Contact() {
   const form = useRef() as MutableRefObject<HTMLFormElement>;
@@ -49,46 +90,24 @@ export function Contact() {
       </h1>
 
       {/* Cards de informacao de contato */}
-      <div className="w-full flex justify-between flex-wrap max-sm:flex-col max-sm:items-center gap-4 max-md:gap-1 max-sm:gap-4">
-        <Card className="flex items-center gap-4 p-4 w-80 max-md:w-52">
-          <MdAlternateEmail className="text-primary text-4xl max-md:text-3xl max-sm:text-2xl" />
-          <div className="flex flex-col">
-            <span className="font-bold max-md:text-sm">Email</span>
-            <span className="text-muted-foreground max-md:text-xs">
-              name@example.com
-            </span>
-          </div>
-        </Card>
-
-        <Card className="flex items-center gap-4 p-4 w-80 max-md:w-52">
-          <MdAlternateEmail className="text-primary text-4xl max-md:text-3xl max-sm:text-2xl" />
-          <div className="flex flex-col">
-            <span className="font-bold max-md:text-sm">Email</span>
-            <span className="text-muted-foreground max-md:text-xs">
-              name@example.com
-            </span>
-          </div>
-        </Card>
-
-        <Card className="flex items-center gap-4 p-4 w-80 max-md:w-52">
-          <MdAlternateEmail className="text-primary text-4xl max-md:text-3xl max-sm:text-2xl" />
-          <div className="flex flex-col">
-            <span className="font-bold max-md:text-sm">Email</span>
-            <span className="text-muted-foreground max-md:text-xs">
-              name@example.com
-            </span>
-          </div>
-        </Card>
-
-        <Card className="flex items-center gap-4 p-4 w-80 max-md:w-52">
-          <MdAlternateEmail className="text-primary text-4xl max-md:text-3xl max-sm:text-2xl" />
-          <div className="flex flex-col">
-            <span className="font-bold max-md:text-sm">Email</span>
-            <span className="text-muted-foreground max-md:text-xs">
-              name@example.com
-            </span>
-          </div>
-        </Card>
+      <div className="w-full flex justify-between flex-wrap max-sm:flex-col max-sm:items-center gap-2 max-md:gap-1 max-sm:gap-4">
+        {socialMidias.map((social) => {
+          return (
+            <a key={social.id} href={social.link} target="_blank">
+              <Card className="flex items-center gap-4 p-4 w-80 max-md:w-52">
+                {social.icon}
+                <div className="flex flex-col">
+                  <span className="font-bold max-md:text-xs">
+                    {social.title}
+                  </span>
+                  <span className="text-muted-foreground text-sm max-md:text-[0.5rem]">
+                    {social.user}
+                  </span>
+                </div>
+              </Card>
+            </a>
+          );
+        })}
       </div>
 
       {/* Formulario */}

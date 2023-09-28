@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Card,
   CardContent,
@@ -6,20 +8,16 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {
-  FaCloudDownloadAlt,
-  FaGithub,
-  FaInstagram,
-  FaLinkedin,
-} from "react-icons/fa";
 
 import { Button } from "@/components/ui/button";
+import { FaCloudDownloadAlt } from "react-icons/fa";
 import Image from "next/image";
 import { LiaNodeJs } from "react-icons/lia";
 import { RiReactjsLine } from "react-icons/ri";
 import { Slider } from "@/components/ui/slider";
 
 export function About() {
+  // Array de objetos de skills do usuario
   const skills = [
     {
       id: 1,
@@ -43,30 +41,14 @@ export function About() {
       icon: <LiaNodeJs size={24} color="#6cc24a" />,
       dominance: 3,
     },
-  ]; // Array de objetos de skills do usuario
+  ];
 
-  const socialLinks = [
-    {
-      id: 1,
-      title: "Download CV",
-      icon: <FaCloudDownloadAlt size={24} />,
-    },
-    {
-      id: 2,
-      title: "Linkedin",
-      icon: <FaLinkedin size={24} />,
-    },
-    {
-      id: 3,
-      title: "Github",
-      icon: <FaGithub size={24} />,
-    },
-    {
-      id: 4,
-      title: "Instagram",
-      icon: <FaInstagram size={24} />,
-    },
-  ]; // Array de Objeto da social midia do usuario
+  const handleClick = () => {
+    window.open(
+      "https://drive.google.com/file/d/1sqJHk7awVtYVKUTBljxHIv9lvrGAB79t/view?usp=sharing",
+      "_blank",
+    );
+  };
 
   return (
     <div
@@ -94,19 +76,15 @@ export function About() {
         </span>
       </p>
 
-      <div className="flex gap-6 items-center flex-wrap max-md:justify-evenly max-sm:grid max-sm:grid-cols-2 max-md:gap-2 max-sm:gap-1 mt-8">
-        {socialLinks.map((socialLink) => {
-          return (
-            <Button
-              key={socialLink.id}
-              variant="link"
-              className="flex items-center gap-2 max-md:text-sm max-sm:text-xs"
-            >
-              {socialLink.icon}
-              {socialLink.title}
-            </Button>
-          );
-        })}
+      <div className="flex gap-6 items-center flex-wrap max-md:justify-center mt-8">
+        <Button
+          variant="default"
+          className="flex items-center gap-2 text-lg max-md:text-sm max-sm:text-xs"
+          onClick={() => handleClick()}
+        >
+          <FaCloudDownloadAlt />
+          Download CV
+        </Button>
       </div>
 
       <h1 className="mt-12 max-sm:text-sm">
