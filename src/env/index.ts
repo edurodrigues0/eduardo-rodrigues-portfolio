@@ -1,5 +1,7 @@
 import z from 'zod';
 
+// Validacao de variaveis ambientes
+
 const envSchema = z.object({
     NEXT_PUBLIC_EMAILJS_ID: z.string(),
     NEXT_PUBLIC_EMAILJS_PUBLICK_KEY: z.string(),

@@ -6,10 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint --ext .ts --ext .tsx",
+    "slicemachine": "start-slicemachine"
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
+    "@prismicio/client": "^7.2.0",
+    "@prismicio/react": "^2.7.3",
     "@radix-ui/react-separator": "^1.0.3",
     "@radix-ui/react-slider": "^1.1.2",
     "@radix-ui/react-slot": "^1.0.2",
@@ -20,7 +23,6 @@
     "axios": "^1.5.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
-    "eslint": "8.50.0",
     "eslint-config-next": "13.5.2",
     "lucide-react": "^0.279.0",
     "next": "13.5.2",
@@ -35,6 +37,11 @@
     "zod": "^3.22.2"
   },
   "devDependencies": {
-    "daisyui": "^3.7.7"
+    "@rocketseat/eslint-config": "^2.1.0",
+    "@slicemachine/adapter-next": "^0.3.17",
+    "daisyui": "^3.7.7",
+    "eslint": "^8.50.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "slice-machine-ui": "^1.14.1"
   }
 }

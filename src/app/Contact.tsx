@@ -8,17 +8,13 @@ import { Input } from "@/components/ui/input";
 import { MdAlternateEmail } from "react-icons/md";
 import { Textarea } from "@/components/ui/textarea";
 import emailjs  from '@emailjs/browser'
-import { z } from "zod"
 
 export function Contact() {
   const form = useRef() as MutableRefObject<HTMLFormElement>
   const [isMessageSuccess, setIsMessageSuccess] = useState(false)
   const [isSubmiting, setIsSubmiting] = useState(false)
 
-  const envSchema = z.object({
-    EMAILJS_ID: z.string().url(),
-});
-
+  // funcao para mail trap do emailJS
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     setIsSubmiting(true);
@@ -41,11 +37,12 @@ export function Contact() {
         Contact me
       </h1>
 
-      <div className="w-full flex justify-between flex-wrap max-sm:flex-col max-sm:items-center max-md:gap-1 max-sm:gap-4">
+      {/*Cards de informacao de contato*/}
+      <div className="w-full flex justify-between flex-wrap max-sm:flex-col max-sm:items-center gap-4 max-md:gap-1 max-sm:gap-4">
         <Card className="flex items-center gap-4 p-4 w-80 max-md:w-52">
           <MdAlternateEmail className="text-primary text-4xl max-md:text-3xl max-sm:text-2xl" />
           <div className="flex flex-col">
-            <span className="text-bold max-md:text-sm">Email</span>
+            <span className="font-bold max-md:text-sm">Email</span>
             <span className="text-muted-foreground max-md:text-xs">name@example.com</span>
           </div>
         </Card>
@@ -53,7 +50,7 @@ export function Contact() {
         <Card className="flex items-center gap-4 p-4 w-80 max-md:w-52">
           <MdAlternateEmail className="text-primary text-4xl max-md:text-3xl max-sm:text-2xl" />
           <div className="flex flex-col">
-            <span className="text-bold max-md:text-sm">Email</span>
+            <span className="font-bold max-md:text-sm">Email</span>
             <span className="text-muted-foreground max-md:text-xs">name@example.com</span>
           </div>
         </Card>
@@ -61,7 +58,7 @@ export function Contact() {
         <Card className="flex items-center gap-4 p-4 w-80 max-md:w-52">
           <MdAlternateEmail className="text-primary text-4xl max-md:text-3xl max-sm:text-2xl" />
           <div className="flex flex-col">
-            <span className="text-bold max-md:text-sm">Email</span>
+            <span className="font-bold max-md:text-sm">Email</span>
             <span className="text-muted-foreground max-md:text-xs">name@example.com</span>
           </div>
         </Card>
@@ -69,12 +66,13 @@ export function Contact() {
         <Card className="flex items-center gap-4 p-4 w-80 max-md:w-52">
           <MdAlternateEmail className="text-primary text-4xl max-md:text-3xl max-sm:text-2xl" />
           <div className="flex flex-col">
-            <span className="text-bold max-md:text-sm">Email</span>
+            <span className="font-bold max-md:text-sm">Email</span>
             <span className="text-muted-foreground max-md:text-xs">name@example.com</span>
           </div>
         </Card>
       </div>
 
+      {/*Formulario*/}
       <form
         className="w-full flex flex-col items-center"
         ref={form}
@@ -129,12 +127,12 @@ export function Contact() {
              <button
                 disabled={isSubmiting}
                 type="submit"
-                className="btn bg-primary mt-12 max-sm:mt-6 self-center w-52 text-bold hover:bg-orange-700"
+                className="btn bg-primary mt-12 max-sm:mt-6 self-center w-52 font-bold hover:bg-orange-700"
               >
                 Send
               </button>
             ) : (
-              <button disabled className="btn mt-12 max-sm:mt-6 self-center w-52 text-bold disabled:bg-green-600 disabled:text-green-50">
+              <button disabled className="btn mt-12 max-sm:mt-6 self-center w-52 font-bold disabled:bg-green-600 disabled:text-green-50">
                 Success!
               </button>
             )

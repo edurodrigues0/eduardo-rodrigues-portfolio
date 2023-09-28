@@ -1,18 +1,6 @@
 import { Button } from "@/components/ui/button";
 
 export function FirstPage() {
-  
-  function scrollToElement(elementId: string) {
-    const element = document.getElementById(elementId);
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-        inline: "nearest",
-      });
-    }
-  }
-
   return (
     <div className="grid grid-cols-2 h-[calc(100vh-5rem)]">
       <div className="p-5 h-full flex flex-col items-start justify-center relative">

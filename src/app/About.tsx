@@ -35,7 +35,7 @@ export function About() {
       icon: <LiaNodeJs size={24} color="#6cc24a" />,
       dominance: 3,
     }
-  ]
+  ] // Array de objetos de skills do usuario
 
   const socialLinks = [
     {
@@ -58,7 +58,7 @@ export function About() {
       title: "Instagram",
       icon: <FaInstagram size={24} />
     }
-  ]
+  ] // Array de Objeto da social midia do usuario
   
   return (
     <div id="about" className="p-10 w-full flex flex-col items-center justify-start">
@@ -73,10 +73,11 @@ export function About() {
         alt="Picture of the user"
       />
       <p className="w-96 max-md:w-72 max-sm:w-60 mt-8">
-        <span>Hello, I{"'"}m a Patrick</span>, web-developer based on Paris. I
-        have rich experience in web site design & building and customization.
-        Also I am good at{" "}
-        <span>html, css, wordpress, php, jquery, bootstrap.</span>
+        <span className="text-primary font-bold">Hello, I{"'"}m a Eduardo</span>, full-stack developer based in Sacramento, Brazil. I have extensive knowledge in building and customizing websites and developing APIs.
+
+        I am familiar with the following technologies:
+        {" "}
+        <span className="text-primary font-bold">React JS, React Native, Next JS, Node JS.</span>
       </p>
       
       <div className="flex gap-6 items-center flex-wrap max-md:justify-evenly max-sm:grid max-sm:grid-cols-2 max-md:gap-2 max-sm:gap-1 mt-8">
