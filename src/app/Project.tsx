@@ -1,16 +1,18 @@
 "use client";
 
-import { PrismicRichText, useAllPrismicDocumentsByType } from "@prismicio/react";
+import {
+  PrismicRichText,
+  useAllPrismicDocumentsByType,
+} from "@prismicio/react";
 
 import { Badge } from "@/components/ui/badge";
-import Image from "next/image"
+import Image from "next/image";
 import { useState } from "react";
 
 export function Project() {
-  const [documents, {state}] = useAllPrismicDocumentsByType('projects')
+  const [documents, { state }] = useAllPrismicDocumentsByType("projects");
 
   const [slide, setSlide] = useState(0);
-
 
   // Funcao para Slide de projeto anterior
   function prevSlide() {
@@ -19,7 +21,6 @@ export function Project() {
     }
     return setSlide(slide - 1);
   }
-
 
   // Funcao para proximo Slide de projetos
   function nextSlide() {
@@ -40,8 +41,8 @@ export function Project() {
       </h1>
 
       <div className="carousel carousel-center max-w-2xl max-md:max-w-md w-full p-4 space-x-4 rounded-box">
-        {state === "loaded" && (
-        documents && (
+        {state === "loaded" &&
+          documents &&
           documents.map((doc) => {
             return (
               <div
@@ -69,7 +70,9 @@ export function Project() {
                     </Badge>
                   </div>
                   <span className="text-xs text-muted-foreground">
-                    <PrismicRichText field={doc.data.slices[0].primary.description} />
+                    <PrismicRichText
+                      field={doc.data.slices[0].primary.description}
+                    />
                   </span>
                   <div className="flex items-center gap-4 mt-2 text-sm max-md:text-xs">
                     <a
@@ -88,7 +91,7 @@ export function Project() {
                       Repositorie
                     </a>
                   </div>
-  
+
                   <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 -top-1/4">
                     <a
                       onClick={prevSlide}
@@ -108,9 +111,7 @@ export function Project() {
                 </div>
               </div>
             );
-          })
-        )
-        )}
+          })}
       </div>
     </div>
   );

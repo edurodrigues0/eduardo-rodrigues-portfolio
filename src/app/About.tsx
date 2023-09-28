@@ -1,4 +1,11 @@
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import {
   FaCloudDownloadAlt,
   FaGithub,
@@ -7,9 +14,9 @@ import {
 } from "react-icons/fa";
 
 import { Button } from "@/components/ui/button";
-import Image from 'next/image'
-import { LiaNodeJs } from "react-icons/lia"
-import { RiReactjsLine } from "react-icons/ri"
+import Image from "next/image";
+import { LiaNodeJs } from "react-icons/lia";
+import { RiReactjsLine } from "react-icons/ri";
 import { Slider } from "@/components/ui/slider";
 
 export function About() {
@@ -31,40 +38,45 @@ export function About() {
     {
       id: 3,
       title: "Node",
-      description: "JavaScript runtime for building scalable and real-time server applications.",
+      description:
+        "JavaScript runtime for building scalable and real-time server applications.",
       icon: <LiaNodeJs size={24} color="#6cc24a" />,
       dominance: 3,
-    }
-  ] // Array de objetos de skills do usuario
+    },
+  ]; // Array de objetos de skills do usuario
 
   const socialLinks = [
     {
       id: 1,
       title: "Download CV",
-      icon: <FaCloudDownloadAlt size={24} />
+      icon: <FaCloudDownloadAlt size={24} />,
     },
     {
       id: 2,
       title: "Linkedin",
-      icon: <FaLinkedin size={24} />
+      icon: <FaLinkedin size={24} />,
     },
     {
       id: 3,
       title: "Github",
-      icon: <FaGithub size={24} />
+      icon: <FaGithub size={24} />,
     },
     {
       id: 4,
       title: "Instagram",
-      icon: <FaInstagram size={24} />
-    }
-  ] // Array de Objeto da social midia do usuario
-  
+      icon: <FaInstagram size={24} />,
+    },
+  ]; // Array de Objeto da social midia do usuario
+
   return (
-    <div id="about" className="p-10 w-full flex flex-col items-center justify-start">
-      
-      <h1 className="text-4xl max-md:text-2xl max-sm:text-lg mb-20">ABOUT ME</h1>
-      
+    <div
+      id="about"
+      className="p-10 w-full flex flex-col items-center justify-start"
+    >
+      <h1 className="text-4xl max-md:text-2xl max-sm:text-lg mb-20">
+        ABOUT ME
+      </h1>
+
       <Image
         width={300}
         height={300}
@@ -73,65 +85,58 @@ export function About() {
         alt="Picture of the user"
       />
       <p className="w-96 max-md:w-72 max-sm:w-60 mt-8">
-        <span className="text-primary font-bold">Hello, I{"'"}m a Eduardo</span>, full-stack developer based in Sacramento, Brazil. I have extensive knowledge in building and customizing websites and developing APIs.
-
-        I am familiar with the following technologies:
-        {" "}
-        <span className="text-primary font-bold">React JS, React Native, Next JS, Node JS.</span>
+        <span className="text-primary font-bold">Hello, I{"'"}m a Eduardo</span>
+        , full-stack developer based in Sacramento, Brazil. I have extensive
+        knowledge in building and customizing websites and developing APIs. I am
+        familiar with the following technologies:{" "}
+        <span className="text-primary font-bold">
+          React JS, React Native, Next JS, Node JS.
+        </span>
       </p>
-      
+
       <div className="flex gap-6 items-center flex-wrap max-md:justify-evenly max-sm:grid max-sm:grid-cols-2 max-md:gap-2 max-sm:gap-1 mt-8">
-        {
-          socialLinks.map((socialLink) => {
-            return (
-              <Button
-                key={socialLink.id}
-                variant="link"
-                className="flex items-center gap-2 max-md:text-sm max-sm:text-xs"
-              >
-                {socialLink.icon}
-                {socialLink.title}
-              </Button>
-            )
-          })
-        }
+        {socialLinks.map((socialLink) => {
+          return (
+            <Button
+              key={socialLink.id}
+              variant="link"
+              className="flex items-center gap-2 max-md:text-sm max-sm:text-xs"
+            >
+              {socialLink.icon}
+              {socialLink.title}
+            </Button>
+          );
+        })}
       </div>
 
       <h1 className="mt-12 max-sm:text-sm">
         <span className="text-primary">My</span> Skills
       </h1>
       <div className="mt-4 flex gap-4 max-md:w-full max-md:flex-col">
-        {
-          skills.map(skill => {
-            return (
-              <Card 
-                key={skill.id}
-                className="max-md:w-full"
-              >
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    {skill.icon}
-                    {skill.title}
-                    </CardTitle>
-                </CardHeader>
-                <CardContent className="h-20">
-                  <CardDescription className="w-60 max-md:w-full">
-                    {skill.description}
-                  </CardDescription>
-                </CardContent>
-                <CardFooter className="flex items-center gap-2">
-                  <span className="text-xs text-muted-foreground">Dominance:</span>
-                  <Slider
-                    disabled
-                    max={10}
-                    defaultValue={[skill.dominance]}
-                  />
-                </CardFooter>
-              </Card>
-            )
-          })
-        }
+        {skills.map((skill) => {
+          return (
+            <Card key={skill.id} className="max-md:w-full">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  {skill.icon}
+                  {skill.title}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="h-20">
+                <CardDescription className="w-60 max-md:w-full">
+                  {skill.description}
+                </CardDescription>
+              </CardContent>
+              <CardFooter className="flex items-center gap-2">
+                <span className="text-xs text-muted-foreground">
+                  Dominance:
+                </span>
+                <Slider disabled max={10} defaultValue={[skill.dominance]} />
+              </CardFooter>
+            </Card>
+          );
+        })}
       </div>
     </div>
-  )
+  );
 }
