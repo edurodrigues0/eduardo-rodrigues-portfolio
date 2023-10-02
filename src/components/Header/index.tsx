@@ -6,7 +6,7 @@ export function Header() {
       </h1>
 
       <nav className="grid grid-cols-4 gap-4 max-sm:gap-2 max-sm:text-xs max-md:text-base">
-        <a href="#firstPage" className="hover:underline">
+        <a href="#home" className="hover:underline">
           Home
         </a>
         <a href="#about" className="hover:underline">

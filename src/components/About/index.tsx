@@ -1,20 +1,11 @@
 "use client";
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-
 import { Button } from "@/components/ui/button";
+import { Card } from "./Card";
 import { FaCloudDownloadAlt } from "react-icons/fa";
 import Image from "next/image";
 import { LiaNodeJs } from "react-icons/lia";
 import { RiReactjsLine } from "react-icons/ri";
-import { Slider } from "@/components/ui/slider";
 
 export function About() {
   // Array de objetos de skills do usuario
@@ -93,25 +84,13 @@ export function About() {
       <div className="mt-4 flex gap-4 max-md:w-full max-md:flex-col">
         {skills.map((skill) => {
           return (
-            <Card key={skill.id} className="max-md:w-full">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  {skill.icon}
-                  {skill.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="h-20">
-                <CardDescription className="w-60 max-md:w-full">
-                  {skill.description}
-                </CardDescription>
-              </CardContent>
-              <CardFooter className="flex items-center gap-2">
-                <span className="text-xs text-muted-foreground">
-                  Dominance:
-                </span>
-                <Slider disabled max={10} defaultValue={[skill.dominance]} />
-              </CardFooter>
-            </Card>
+            <Card
+              key={skill.id}
+              icon={skill.icon}
+              title={skill.title}
+              description={skill.description}
+              dominance={skill.dominance}
+            />
           );
         })}
       </div>

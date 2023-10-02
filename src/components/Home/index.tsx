@@ -1,6 +1,4 @@
-import { Button } from "@/components/ui/button";
-
-export function FirstPage() {
+export function Home() {
   return (
     <div className="grid grid-cols-2 h-[calc(100vh-5rem)]">
       <div className="p-5 h-full flex flex-col items-start justify-center relative">
