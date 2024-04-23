@@ -3,28 +3,40 @@ import Image from "next/image";
 import heroSvg from "public/hero.svg";
 
 export function Home() {
+  const handleClick = () => {
+    window.open(
+      "https://drive.google.com/file/d/1sqJHk7awVtYVKUTBljxHIv9lvrGAB79t/view?usp=sharing",
+      "_blank",
+    );
+  };
+
   return (
     <div
       id="inicio"
-      className="p-10 calc(h-screen-2.5rem) grid grid-cols-2 gap-10"
+      className="h-[calc(100vh-(5rem))] w-full flex items-center justify-evenly"
     >
-      <div className="justify-self-center self-center flex flex-col gap-3">
+      <div className="flex flex-col gap-4 w-1/2">
         <h2 className="text-primary text-xl font-semibold -mb-3">
           DESENVOLVEDOR FULL-STACK
         </h2>
         <h1 className="text-5xl font-bold">Eduardo Rodrigues</h1>
-        <p className="w-1/2 text-lg">
-          Um entusiasta da tecnologia apaixonado por código, café e games. Amo
-          transformar ideias malucas em soluções incríveis. Sempre pronto para
-          aprender algo novo e fazer parte de projetos emocionantes!
+        <p className="text-lg w-96">
+          Um entusiasta da tecnologia apaixonado por código, games, academia e
+          futebol.
+          <br />
+          Amo transformar ideias malucas em soluções incríveis. Sempre pronto
+          para aprender algo novo e fazer parte de projetos emocionantes!
         </p>
-        <Button className="p-4 w-fit" variant="outline">
+        <Button
+          className="p-4 w-fit row-span-2"
+          variant="outline"
+          onClick={handleClick}
+        >
           BAIXAR CURRÍCULO
         </Button>
       </div>
 
       <Image
-        className="justify-self-center self-center"
         src={heroSvg}
         alt="A programming person"
         width="512"

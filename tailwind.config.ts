@@ -8,6 +8,7 @@ export default {
         background: "#202833",
         foreground: "#FAFBFB",
         primary: "#4DA9AB",
+        primaryForeground: "#3d8788",
       },
     },
   },

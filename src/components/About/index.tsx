@@ -1,98 +1,84 @@
-"use client";
-
-import { Button } from "@/components/ui/button";
-import { Card } from "./Card";
-import { FaCloudDownloadAlt } from "react-icons/fa";
+import { FiMail, FiGithub, FiLinkedin } from "react-icons/fi";
 import Image from "next/image";
-import { LiaNodeJs } from "react-icons/lia";
-import { RiReactjsLine } from "react-icons/ri";
+import { Divider } from "../Divider";
 
 export function About() {
-  // Array de objetos de skills do usuario
-  const skills = [
+  // Array de objetos de skills
+  const icons = [
     {
       id: 1,
-      title: "React JS",
-      description: "JavaScript library for building user interfaces.",
-      icon: <RiReactjsLine size={24} color="#4082cc" />,
-      dominance: 7,
+      icon: <FiMail size={24} />,
+      href: "mailto:edurodriguesdev1@gmail.com",
     },
     {
       id: 2,
-      title: "React Native",
-      description: "Build native mobile apps using JavaScript and React",
-      icon: <RiReactjsLine size={24} color="#2bd5f3" />,
-      dominance: 1.5,
+      icon: <FiGithub size={24} />,
+      href: "https://github.com/edurodrigues0",
     },
     {
       id: 3,
-      title: "Node",
-      description:
-        "JavaScript runtime for building scalable and real-time server applications.",
-      icon: <LiaNodeJs size={24} color="#6cc24a" />,
-      dominance: 3,
+      icon: <FiLinkedin size={24} />,
+      href: "https://www.linkedin.com/in/eduardo-rodrigues-93b66518a/",
     },
   ];
-
-  const handleClick = () => {
-    window.open(
-      "https://drive.google.com/file/d/1sqJHk7awVtYVKUTBljxHIv9lvrGAB79t/view?usp=sharing",
-      "_blank",
-    );
-  };
 
   return (
     <div
       id="sobre"
-      className="p-10 w-full flex flex-col items-center justify-start"
+      className="w-full h-screen flex flex-col items-center justify-start"
     >
-      <h1 className="text-4xl max-md:text-2xl max-sm:text-lg mb-20">
-        ABOUT ME
-      </h1>
+      <Divider title="Sobre" />
 
-      <Image
-        width={300}
-        height={300}
-        className="max-md:w-48 max-sm:w-36 rounded-full border-2 border-primary grayscale transition-all ease duration-500 hover:grayscale-0"
-        src="https://github.com/edurodrigues0.png"
-        alt="Picture of the user"
-      />
-      <p className="w-96 max-md:w-72 max-sm:w-60 mt-8">
-        <span className="text-primary font-bold">Hello, I{"'"}m a Eduardo</span>
-        , full-stack developer based in Sacramento, Brazil. I have extensive
-        knowledge in building and customizing websites and developing APIs. I am
-        familiar with the following technologies:{" "}
-        <span className="text-primary font-bold">
-          React JS, React Native, Next JS, Node JS.
-        </span>
-      </p>
+      <div className="flex-1 w-full flex justify-around items-center gap-10">
+        <div className="flex flex-col gap-6 items-center">
+          <Image
+            width={500}
+            height={500}
+            className="p-2 w-72 rounded-full border-2 border-primary"
+            src="https://github.com/edurodrigues0.png"
+            alt="Foto de perfil de Eduardo Rodrigues"
+          />
+          <span className="text-2xl w-fit font-bold">Eduardo Rodrigues</span>
+          <div className="w-full flex items-center justify-evenly text-primary">
+            {icons.map((icon) => {
+              return (
+                <a
+                  key={icon.id}
+                  href={icon.href}
+                  className="hover:text-primaryForeground transition-colors"
+                  target="_blank"
+                >
+                  {icon.icon}
+                </a>
+              );
+            })}
+          </div>
+        </div>
 
-      <div className="flex gap-6 items-center flex-wrap max-md:justify-center mt-8">
-        <Button
-          variant="default"
-          className="flex items-center gap-2 text-lg max-md:text-sm max-sm:text-xs"
-          onClick={() => handleClick()}
-        >
-          <FaCloudDownloadAlt />
-          Download CV
-        </Button>
-      </div>
+        <div className="text-start w-[470px]">
+          <h1 className="text-xl font-bold">Conheça um pouco sobre mim</h1>
 
-      <h1 className="mt-12 max-sm:text-sm">
-        <span className="text-primary">My</span> Skills
-      </h1>
-      <div className="mt-4 flex gap-4 max-md:w-full max-md:flex-col">
-        {skills.map((skill) => {
-          return (
-            <Card
-              key={skill.id}
-              icon={skill.icon}
-              title={skill.title}
-              description={skill.description}
-              dominance={skill.dominance}
-            />
-          );
-        })}
+          <p className="mt-3">
+            Olá, eu sou Eduardo Rodrigues, moro em Sacramento, Brasil.
+            <br />
+            Como desenvolvedor full-stack, tenho uma paixão por criar e
+            personalizar websites, bem como desenvolver APIs robustas para
+            suportar uma variedade de aplicações web e móveis. Ao longo dos
+            anos, acumulei uma ampla gama de habilidades nesse campo. Minha
+            expertise abrange o uso de tecnologias modernas, como{" "}
+            <span className="text-primary">
+              React JS, React Native, Next JS e Node JS
+            </span>
+            <br />
+            Sou entusiasta por games, futebol e academia, e adoro canalizar
+            minha criatividade em transformar ideias malucas em códigos
+            funcionais relacionado a esses assuntos.
+            <br />
+            Estou sempre buscando aprender e me atualizar para enfrentar novos
+            desafios e contribuir de maneira significativa para projetos
+            empolgantes e inovadores
+          </p>
+        </div>
       </div>
     </div>
   );
