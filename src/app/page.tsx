@@ -15,7 +15,7 @@ export default function HomePage() {
       <Layout>
         <main id="home" className="xl:px-10 md:px-5 sm:px-4">
           <Home />
-          <Separator className="bg-white" />
+          {/* <Separator className="bg-white" />
 
           <About />
           <Separator className="bg-white" />
@@ -23,7 +23,7 @@ export default function HomePage() {
           <Project />
           <Separator className="bg-white" />
 
-          <Contact />
+          <Contact /> */}
         </main>
       </Layout>
     </PrismicProvider>

@@ -1,36 +1,37 @@
+import { Button } from "../ui/button";
+import Image from "next/image";
+import heroSvg from "public/hero.svg";
+
 export function Home() {
   return (
-    <div className="grid grid-cols-2 h-[calc(100vh-5rem)]">
-      <div className="p-5 h-full flex flex-col items-start justify-center relative">
-        <h1 className="py-4 text-7xl max-md:text-4xl max-sm:text-2xl bg-gradient-to-r from-orange-600 to-orange-100 bg-clip-text text-transparent">
-          Hi there, <br /> I{"'"}m Eduardo Rodrigues
-        </h1>
-        <span className="text-4xl max-md:text-xl max-sm:text-sm mt-4">
-          Full-Stack Developer
-        </span>
-        <span className="text-2xl max-md:text-lg max-sm:text-xs text-muted-foreground">
-          For Website and Mobile
-        </span>
-
-        <a
-          href="#about"
-          className="absolute text-base h-10 px-4 py-2 rounded-md border border-input bg-background hover:bg-accent hover:text-accent-foreground bottom-32 max-md:bottom-48 max-sm:bottom-36 max-sm:text-xs transition-colors"
-        >
-          See more about me
-        </a>
+    <div
+      id="inicio"
+      className="p-10 calc(h-screen-2.5rem) grid grid-cols-2 gap-10"
+    >
+      <div className="justify-self-center self-center flex flex-col gap-3">
+        <h2 className="text-primary text-xl font-semibold -mb-3">
+          DESENVOLVEDOR FULL-STACK
+        </h2>
+        <h1 className="text-5xl font-bold">Eduardo Rodrigues</h1>
+        <p className="w-1/2 text-lg">
+          Um entusiasta da tecnologia apaixonado por código, café e games. Amo
+          transformar ideias malucas em soluções incríveis. Sempre pronto para
+          aprender algo novo e fazer parte de projetos emocionantes!
+        </p>
+        <Button className="p-4 w-fit" variant="outline">
+          BAIXAR CURRÍCULO
+        </Button>
       </div>
 
-      <div className="bg-secondary flex flex-col items-center justify-center relative">
-        <span className="py-4 text-[10rem] max-md:text-9xl max-sm:text-7xl">
-          👨🏻‍💻
-        </span>
-        <a
-          href="#project"
-          className="absolute text-base h-10 px-4 py-2 rounded-md border hover:text-accent-foreground bottom-32 max-md:bottom-48 max-sm:bottom-36 max-sm:text-xs bg-secondary border-primary self-center mt-10 hover:bg-primary transition-colors"
-        >
-          See My Works
-        </a>
-      </div>
+      <Image
+        className="justify-self-center self-center"
+        src={heroSvg}
+        alt="A programming person"
+        width="512"
+        height="512"
+      />
+
+      <div className="absolute overflow-clip z-0 top-1/2 left-1/2 -translate-y-2/4 -translate-x-2/4 h-[70%] w-[40%] rounded-full bg-white/10 blur-3xl" />
     </div>
   );
 }

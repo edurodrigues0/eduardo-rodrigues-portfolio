@@ -81,7 +81,7 @@ export function Contact() {
 
   return (
     <div
-      id="contact"
+      id="contato"
       className="w-full h-screen max-sm:h-full flex flex-col items-center py-10"
     >
       <h1 className="text-4xl max-md:text-2xl max-sm:text-lg mb-20">

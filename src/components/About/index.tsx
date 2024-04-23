@@ -43,7 +43,7 @@ export function About() {
 
   return (
     <div
-      id="about"
+      id="sobre"
       className="p-10 w-full flex flex-col items-center justify-start"
     >
       <h1 className="text-4xl max-md:text-2xl max-sm:text-lg mb-20">
