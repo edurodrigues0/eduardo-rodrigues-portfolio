@@ -1,29 +1,24 @@
 "use client";
 
 import { About } from "@/components/About";
-import { Contact } from "@/components/Contact";
 import { Home } from "@/components/Home";
 import { Layout } from "@/layout/Layout";
 import { PrismicProvider } from "@prismicio/react";
 import { client } from "@/services/prismic";
+import { Skills } from "../components/Skills";
+import { Header } from "@/components/Header";
+import { Contact } from "@/components/Contact";
 
 export default function HomePage() {
   return (
     <PrismicProvider client={client}>
+      <Header />
       <Layout>
-        <main id="home" className="xl:px-10 md:px-5 sm:px-4">
+        <main className="xl:px-10 md:px-5 sm:px-4">
           <Home />
-
           <About />
-          {/* <Separator className="bg-white" />
-
-
-          <Separator className="bg-white" />
-
-          <Project />
-          <Separator className="bg-white" />
-
-          <Contact /> */}
+          <Skills />
+          <Contact />
         </main>
       </Layout>
     </PrismicProvider>

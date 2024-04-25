@@ -8,6 +8,7 @@ import { Form } from "./Form";
 import { MdWhatsapp } from "react-icons/md";
 import { SocialCard } from "./SocialCard";
 import emailjs from "@emailjs/browser";
+import { Divider } from "../Divider";
 
 // Array de Objeto da social midia do usuario
 const socialMidias = [
@@ -23,11 +24,11 @@ const socialMidias = [
   {
     id: 2,
     title: "Github",
-    user: "@EduRodriguesDev",
+    user: "@edurodrigues0",
     icon: (
       <FaGithub className="text-primary text-4xl max-md:text-3xl max-sm:text-xl" />
     ),
-    link: "https://github.com/EduRodriguesDev",
+    link: "https://github.com/edurodrigues0",
   },
   {
     id: 3,
@@ -84,12 +85,17 @@ export function Contact() {
       id="contato"
       className="w-full h-screen max-sm:h-full flex flex-col items-center py-10"
     >
-      <h1 className="text-4xl max-md:text-2xl max-sm:text-lg mb-20">
-        Contact me
-      </h1>
+      <Divider title="Contato" />
+
+      <p className="mt-20 self-start text-lg text-slate-300">
+        Sinta-se a vontade para entrar em contato comigo, será um prazer
+        atende-lo.
+        <br />
+        Estou disponivel todos os dias.
+      </p>
 
       {/* Cards de informacao de contato */}
-      <div className="w-full flex justify-between flex-wrap max-sm:flex-col max-sm:items-center gap-2 max-md:gap-1 max-sm:gap-4">
+      <div className="mt-20 w-full flex justify-between flex-wrap max-sm:flex-col max-sm:items-center gap-2 max-md:gap-1 max-sm:gap-4">
         {socialMidias.map((social) => {
           return (
             <SocialCard

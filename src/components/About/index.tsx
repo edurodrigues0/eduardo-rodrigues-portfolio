@@ -32,6 +32,7 @@ export function About() {
       <div className="flex-1 w-full flex justify-around items-center gap-10">
         <div className="flex flex-col gap-6 items-center">
           <Image
+            priority={true}
             width={500}
             height={500}
             className="p-2 w-72 rounded-full border-2 border-primary"

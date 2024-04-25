@@ -13,7 +13,7 @@ export function Home() {
   return (
     <div
       id="inicio"
-      className="h-[calc(100vh-(5rem))] w-full flex items-center justify-evenly"
+      className="h-[calc(100vh-1rem)] w-full flex items-center justify-evenly"
     >
       <div className="flex flex-col gap-4 w-1/2">
         <h2 className="text-primary text-xl font-semibold -mb-3">
@@ -21,8 +21,10 @@ export function Home() {
         </h2>
         <h1 className="text-5xl font-bold">Eduardo Rodrigues</h1>
         <p className="text-lg w-96">
-          Um entusiasta da tecnologia apaixonado por código, games, academia e
-          futebol.
+          Um entusiasta da tecnologia apaixonado por{" "}
+          <span className="text-primary font-semibold">
+            código, games, academia e futebol.
+          </span>
           <br />
           Amo transformar ideias malucas em soluções incríveis. Sempre pronto
           para aprender algo novo e fazer parte de projetos emocionantes!
@@ -37,6 +39,7 @@ export function Home() {
       </div>
 
       <Image
+        priority={true}
         src={heroSvg}
         alt="A programming person"
         width="512"

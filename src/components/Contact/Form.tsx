@@ -22,17 +22,17 @@ export function Form({
       ref={form}
       onSubmit={handleSubmit}
     >
-      <h1 className="mt-12 max-sm:text-sm">
-        <span className="text-primary">Contact</span> Form
+      <h1 className="mt-12 max-sm:text-sm text-lg self-start">
+        Mande um e-mail se preferir! 😉
       </h1>
 
-      <div className="p-8 max-sm:p-4 w-full max-sm:w-80 flex flex-col bg-secondary rounded-lg mt-12">
+      <div className="max-sm:p-4 w-full max-sm:w-80 flex flex-col bg-secondary rounded-lg mt-12">
         <div className="flex max-sm:flex-col items-center justify-between gap-12 max-sm:gap-4">
           <div className="flex flex-col gap-8 max-sm:gap-4">
             <Input
               className="w-[40rem] max-lg:w-96 max-md:w-72"
               type="text"
-              placeholder="Full name"
+              placeholder="Seu nome"
               required
               name="from_name"
               id="from_name"
@@ -41,7 +41,7 @@ export function Form({
             <Input
               className="w-[40rem] max-lg:w-96 max-md:w-72"
               type="email"
-              placeholder="Email address"
+              placeholder="Endereço de e-mail"
               required
               name="from_email"
               id="from_email"
@@ -50,7 +50,7 @@ export function Form({
             <Input
               className="w-[40rem] max-lg:w-96 max-md:w-72"
               type="text"
-              placeholder="Subject"
+              placeholder="Título do e-mail"
               required
               name="from_subject"
               id="from_subject"
@@ -59,7 +59,7 @@ export function Form({
 
           <Textarea
             className="resize-none h-full max-sm:w-72 max-sm:h-56"
-            placeholder="Your message here..."
+            placeholder="Sua mensagem aqui..."
             required
             name="message"
             id="message"
@@ -70,14 +70,14 @@ export function Form({
           <button
             disabled={isSubmiting}
             type="submit"
-            className="btn bg-primary mt-12 max-sm:mt-6 self-center w-52 font-bold hover:bg-orange-700"
+            className="bg-primary mt-12 max-sm:mt-6 self-center w-52 font-bold p-4 rounded-md hover:bg-primaryForeground transition-colors"
           >
-            Send
+            Enviar
           </button>
         ) : (
           <button
             disabled
-            className="btn mt-12 max-sm:mt-6 self-center w-52 font-bold disabled:bg-green-600 disabled:text-green-50"
+            className="btn mt-12 max-sm:mt-6 self-center w-52 p-4 rounded-md font-bold disabled:bg-green-700 disabled:text-green-50"
           >
             Success!
           </button>
