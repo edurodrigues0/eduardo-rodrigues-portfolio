@@ -53,8 +53,7 @@ interface ProjectsDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
-  slices: prismic.SliceZone<ProjectsDocumentDataSlicesSlice>
-  /**
+  slices: prismic.SliceZone<ProjectsDocumentDataSlicesSlice> /**
    * Meta Description field in *projects*
    *
    * - **Field Type**: Text
@@ -131,16 +130,6 @@ export interface ProjectsSliceDefaultPrimary {
   description: prismic.RichTextField;
 
   /**
-   * Language field in *Projects → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: projects.primary.language
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  language: prismic.KeyTextField;
-
-  /**
    * Slide field in *Projects → Primary*
    *
    * - **Field Type**: Image
@@ -205,7 +194,7 @@ declare module "@prismicio/client" {
   interface CreateClient {
     (
       repositoryNameOrEndpoint: string,
-      options?: prismic.ClientConfig
+      options?: prismic.ClientConfig,
     ): prismic.Client<AllDocumentTypes>;
   }
 

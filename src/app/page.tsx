@@ -8,6 +8,7 @@ import { client } from "@/services/prismic";
 import { Skills } from "../components/Skills";
 import { Header } from "@/components/Header";
 import { Contact } from "@/components/Contact";
+import { Project } from "@/components/Project";
 
 export default function HomePage() {
   return (
@@ -18,6 +19,7 @@ export default function HomePage() {
           <Home />
           <About />
           <Skills />
+          <Project />
           <Contact />
         </main>
       </Layout>

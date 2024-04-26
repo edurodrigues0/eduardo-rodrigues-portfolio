@@ -21,6 +21,7 @@ const Slider = React.forwardRef<
     </SliderPrimitive.Track>
   </SliderPrimitive.Root>
 ));
+
 Slider.displayName = SliderPrimitive.Root.displayName;
 
 export { Slider };

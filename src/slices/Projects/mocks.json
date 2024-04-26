@@ -19,11 +19,6 @@
 					}
 				]
 			},
-			"language": {
-				"__TYPE__": "FieldContent",
-				"value": "warm",
-				"type": "Text"
-			},
 			"slide": {
 				"origin": {
 					"id": "main",
