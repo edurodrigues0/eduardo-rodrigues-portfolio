@@ -27,7 +27,7 @@ export function Link({ title, href, ...rest }: LinkProps) {
     <a className="flex group" {...rest}>
       <div className="text-cyan-500 cursor-pointer">
         <span className="flex flex-col items-center">
-          <span className="text-sm mb-0.5 transition-all duration-200">
+          <span className="text-sm max-md:text-xs mb-0.5 transition-all duration-200">
             {title}
           </span>
 
@@ -39,7 +39,7 @@ export function Link({ title, href, ...rest }: LinkProps) {
     <a className="flex group" href={href} {...rest}>
       <div className="text-white hover:text-cyan-500 cursor-pointer">
         <span className="flex flex-col items-center">
-          <span className="text-sm mb-0.5 transition-all duration-200">
+          <span className="text-sm max-md:text-xs mb-0.5 transition-all duration-200">
             {title}
           </span>
 

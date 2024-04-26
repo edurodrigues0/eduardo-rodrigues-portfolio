@@ -22,7 +22,7 @@ export function Form({
       ref={form}
       onSubmit={handleSubmit}
     >
-      <h1 className="mt-12 max-sm:text-sm text-lg self-start">
+      <h1 className="max-sm:w-1/2 max-sm:mx-auto mt-12 max-sm:text-xs text-lg self-start">
         Mande um e-mail se preferir! 😉
       </h1>
 
@@ -70,14 +70,14 @@ export function Form({
           <button
             disabled={isSubmiting}
             type="submit"
-            className="bg-primary mt-12 max-sm:mt-6 self-center w-52 font-bold p-4 rounded-md hover:bg-primaryForeground transition-colors"
+            className="bg-primary mt-12 max-sm:mt-6 self-center w-52 max-sm:w-full font-bold p-4 rounded-md hover:bg-primaryForeground transition-colors"
           >
             Enviar
           </button>
         ) : (
           <button
             disabled
-            className="btn mt-12 max-sm:mt-6 self-center w-52 p-4 rounded-md font-bold disabled:bg-green-700 disabled:text-green-50"
+            className="btn mt-12 max-sm:mt-6 self-center w-52 max-sm:w-full p-4 rounded-md font-bold disabled:bg-green-700 disabled:text-green-50"
           >
             Success!
           </button>

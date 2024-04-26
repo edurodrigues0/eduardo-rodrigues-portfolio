@@ -24,8 +24,8 @@ export default function HomePage() {
           <Contact />
         </main>
 
-        <footer className="w-full h-10 mb-10 flex items-center justify-center">
-          <h1 className="mx-auto text-xs text-slate-300">
+        <footer className="w-full h-10 max-sm:h-5 my-10 flex items-center justify-center">
+          <h1 className="mx-auto text-xs max-sm:text-[10px] text-slate-300">
             Projeto desenvolvido com 💙 em Next JS por Eduardo Rodrigues.
           </h1>
         </footer>

@@ -11,8 +11,8 @@ export function ProjectCard({ doc }: ProjetctCardProps) {
   }
 
   return (
-    <div className="relative h-96 w-80 bg-slate-600 grid grid-rows-4 p-4 rounded-lg shadow-lg shadow-slate-700">
-      <div className="absolute -top-3 right-1/2 translate-x-1/2 h-20 w-72 bg-primary rounded-lg -z-50" />
+    <div className="relative h-96 w-80 max-sm:w-72 bg-slate-600 grid grid-rows-4 p-4 rounded-lg shadow-lg shadow-slate-700">
+      {/* <div className="absolute -top-7 right-1/2 translate-x-1/2 h-20 w-72 bg-primary rounded-lg -z-50" /> */}
       <header className="w-full flex flex-col gap-3 row-span-2">
         <h1 className="mx-auto font-bold">
           {doc.data.slices[0].primary.title}
@@ -21,24 +21,24 @@ export function ProjectCard({ doc }: ProjetctCardProps) {
           <PrismicRichText field={doc.data.slices[0].primary.description} />
         </span>
       </header>
-      <div className="flex flex-wrap items-end justify-start gap-x-4 gap-y-3 self-center">
+      <div className="flex flex-wrap items-end justify-start gap-x-4 max-sm:gap-x-2 gap-y-3 self-center">
         {doc.tags.map((tag, index) => {
           return (
             <span
               key={index}
-              className="p-2 border border-primary rounded-lg text-xs text-foreground uppercase"
+              className="p-2 max-sm:p-1.5 border border-primary rounded-lg text-xs text-foreground uppercase"
             >
               {tag}
             </span>
           );
         })}
       </div>
-      <div className="flex items-center justify-center gap-4 self-end">
+      <div className="flex max-sm:flex-col items-center justify-center gap-4 max-sm:gap-3 self-end">
         <button
           onClick={() =>
             handleGoToLink(doc.data.slices[0].primary.homepage.url)
           }
-          className="p-2 w-full bg-slate-700 text-primary rounded-lg font-bold text-base hover:bg-slate-700/75 transition-colors"
+          className="p-2 w-full bg-slate-700 text-primary rounded-lg font-bold text-base max-sm:text-xs hover:bg-slate-700/75 transition-colors"
         >
           Acessar
         </button>
@@ -47,7 +47,7 @@ export function ProjectCard({ doc }: ProjetctCardProps) {
           onClick={() =>
             handleGoToLink(doc.data.slices[0].primary.repository.url)
           }
-          className="p-2 w-full bg-slate-700 text-primary rounded-lg font-bold text-base hover:bg-slate-700/75 transition-colors disabled:bg-gray-800 disabled:text-cyan-800"
+          className="p-2 w-full bg-slate-700 text-primary rounded-lg font-bold text-base max-sm:text-xs hover:bg-slate-700/75 transition-colors disabled:bg-gray-800 disabled:text-cyan-800"
         >
           Repositorio
         </button>

@@ -29,17 +29,19 @@ export function About() {
     >
       <Divider title="Sobre" />
 
-      <div className="flex-1 w-full flex justify-around items-center gap-10">
-        <div className="flex flex-col gap-6 items-center">
+      <div className="flex-1 w-full flex max-md:flex-col justify-around max-sm:justify-center items-center gap-10">
+        <div className="flex flex-col gap-6 max-sm:gap-3 items-center">
           <Image
             priority={true}
             width={500}
             height={500}
-            className="p-2 w-72 rounded-full border-2 border-primary"
+            className="p-2 w-72 max-md:w-40 rounded-full border-2 border-primary"
             src="https://github.com/edurodrigues0.png"
             alt="Foto de perfil de Eduardo Rodrigues"
           />
-          <span className="text-2xl w-fit font-bold">Eduardo Rodrigues</span>
+          <span className="text-2xl max-md:text-lg w-fit font-bold">
+            Eduardo Rodrigues
+          </span>
           <div className="w-full flex items-center justify-evenly text-primary">
             {icons.map((icon) => {
               return (
@@ -56,10 +58,12 @@ export function About() {
           </div>
         </div>
 
-        <div className="text-start w-[470px]">
-          <h1 className="text-xl font-bold">Conheça um pouco sobre mim</h1>
+        <div className="text-start w-[470px] max-sm:w-full max-sm:px-10">
+          <h1 className="text-xl max-sm:text-base font-bold">
+            Conheça um pouco sobre mim
+          </h1>
 
-          <p className="mt-3">
+          <p className="mt-3 max-sm:text-sm">
             Olá, eu sou Eduardo Rodrigues, moro em Sacramento, Brasil.
             <br />
             Como desenvolvedor full-stack, tenho uma paixão por criar e

@@ -15,7 +15,7 @@ export function Project() {
   return (
     <div
       id="projetos"
-      className="w-full h-screen max-sm:h-full flex flex-col items-center p-10"
+      className="w-full h-screen max-sm:h-full flex flex-col items-center"
     >
       <Divider title="Projetos" />
 
@@ -23,7 +23,7 @@ export function Project() {
         opts={{
           align: "start",
         }}
-        className="w-full max-w-5xl flex flex-1 items-center justify-center"
+        className="w-full max-w-5xl max-sm:max-w-[300px] flex flex-1 items-center justify-center"
       >
         <CarouselContent>
           {state === "loaded" &&

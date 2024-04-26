@@ -10,9 +10,9 @@ interface CardProps {
 
 export function Card({ title, icon, dominance, color }: CardProps) {
   return (
-    <div className="w-32 h-32 p-1 flex flex-col gap-5 items-center justify-center">
-      <span className="text-lg -mb-4">{title}</span>
-      {icon}
+    <div className="w-32 max-sm:w-24 h-24 max-sm:h-28 p-1 flex flex-col gap-5 items-center justify-center">
+      <span className="text-lg max-sm:text-sm -mb-4">{title}</span>
+      <span className="text-6xl max-sm:text-4xl">{icon}</span>
       <Slider
         className={color ?? "bg-primary"}
         disabled

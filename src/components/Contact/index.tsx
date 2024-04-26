@@ -87,7 +87,7 @@ export function Contact() {
     >
       <Divider title="Contato" />
 
-      <p className="mt-20 self-start text-lg text-slate-300">
+      <p className="mt-20 self-start text-lg max-sm:text-xs max-sm:w-1/2 max-sm:mx-auto text-slate-300">
         Sinta-se a vontade para entrar em contato comigo, será um prazer
         atende-lo.
         <br />
