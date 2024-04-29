@@ -21,9 +21,9 @@ export function Project() {
 
       <Carousel
         opts={{
-          align: "start",
+          align: "center",
         }}
-        className="w-full max-w-5xl max-sm:max-w-[300px] flex flex-1 items-center justify-center"
+        className="w-full max-w-4xl max-lg:max-w-xl max-sm:max-w-[300px] flex flex-1 items-center justify-center"
       >
         <CarouselContent>
           {state === "loaded" &&
@@ -32,7 +32,7 @@ export function Project() {
               <CarouselItem
                 key={doc.id}
                 id={doc.id}
-                className="md:basis-1/2 lg:basis-1/3"
+                className="sm:basis-1/2 md:basis-1/2 lg:basis-1/3 flex items-center justify-center"
               >
                 <ProjectCard doc={doc} />
               </CarouselItem>

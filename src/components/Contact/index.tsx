@@ -15,9 +15,7 @@ const socialMidias = [
   {
     id: 1,
     title: "Linkedin",
-    icon: (
-      <FaLinkedin className="text-primary text-4xl max-md:text-3xl max-sm:text-xl" />
-    ),
+    icon: <FaLinkedin className="text-4xl max-md:text-3xl max-sm:text-xl" />,
     user: "eduardo-rodrigues-93b66518a",
     link: "https://www.linkedin.com/in/eduardo-rodrigues-93b66518a/",
   },
@@ -25,27 +23,21 @@ const socialMidias = [
     id: 2,
     title: "Github",
     user: "@edurodrigues0",
-    icon: (
-      <FaGithub className="text-primary text-4xl max-md:text-3xl max-sm:text-xl" />
-    ),
+    icon: <FaGithub className="text-4xl max-md:text-3xl max-sm:text-xl" />,
     link: "https://github.com/edurodrigues0",
   },
   {
     id: 3,
     title: "Instagram",
     user: "@edurodriigues0",
-    icon: (
-      <FaInstagram className="text-primary text-4xl max-md:text-3xl max-sm:text-xl" />
-    ),
+    icon: <FaInstagram className="text-4xl max-md:text-3xl max-sm:text-xl" />,
     link: "https://www.instagram.com/edurodriigues0/",
   },
   {
     id: 4,
     title: "Whatsapp",
     user: "+55 (34) 9 9824-9953",
-    icon: (
-      <MdWhatsapp className="text-primary text-4xl max-md:text-3xl max-sm:text-xl" />
-    ),
+    icon: <MdWhatsapp className="text-4xl max-md:text-3xl max-sm:text-xl" />,
     link: " https://wa.me/5534998249953?text=Olá%20Eduardo%20estou%20entrando%20em%20contato...",
   },
 ];

@@ -70,14 +70,14 @@ export function About() {
             personalizar websites, bem como desenvolver APIs robustas para
             suportar uma variedade de aplicações web e móveis. Ao longo dos
             anos, acumulei uma ampla gama de habilidades nesse campo. Minha
-            expertise abrange o uso de tecnologias modernas, como{" "}
+            expertise abrange o uso de tecnologias, como{" "}
             <span className="text-primary">
               React JS, React Native, Next JS e Node JS
             </span>
             <br />
             Sou entusiasta por games, futebol e academia, e adoro canalizar
             minha criatividade em transformar ideias malucas em códigos
-            funcionais relacionado a esses assuntos.
+            relacionado a esses assuntos.
             <br />
             Estou sempre buscando aprender e me atualizar para enfrentar novos
             desafios e contribuir de maneira significativa para projetos

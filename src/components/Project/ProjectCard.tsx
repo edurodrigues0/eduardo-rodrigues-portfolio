@@ -11,8 +11,7 @@ export function ProjectCard({ doc }: ProjetctCardProps) {
   }
 
   return (
-    <div className="relative h-96 w-80 max-sm:w-72 bg-slate-600 grid grid-rows-4 p-4 rounded-lg shadow-lg shadow-slate-700">
-      {/* <div className="absolute -top-7 right-1/2 translate-x-1/2 h-20 w-72 bg-primary rounded-lg -z-50" /> */}
+    <div className="relative h-96 max-lg:h-[30rem] w-72 max-lg:w-64 bg-slate-600 grid grid-rows-4 p-4 rounded-lg shadow-lg shadow-slate-700">
       <header className="w-full flex flex-col gap-3 row-span-2">
         <h1 className="mx-auto font-bold">
           {doc.data.slices[0].primary.title}
@@ -26,7 +25,7 @@ export function ProjectCard({ doc }: ProjetctCardProps) {
           return (
             <span
               key={index}
-              className="p-2 max-sm:p-1.5 border border-primary rounded-lg text-xs text-foreground uppercase"
+              className="p-2 max-sm:p-1.5 border border-primary rounded-lg text-xs text-foreground font-light uppercase"
             >
               {tag}
             </span>

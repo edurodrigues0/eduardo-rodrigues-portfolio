@@ -16,7 +16,7 @@ export function Home() {
       className="h-[calc(100vh-1rem)] w-full flex max-sm:flex-col-reverse items-center justify-evenly max-sm:justify-center max-sm:gap-10"
     >
       <div className="flex flex-col gap-4 w-1/2">
-        <h2 className="text-primary text-xl max-md:text-sm font-semibold -mb-3">
+        <h2 className="text-primary text-xl max-md:text-sm max-sm:text-xs font-semibold -mb-3">
           DESENVOLVEDOR FULL-STACK
         </h2>
         <h1 className="text-5xl max-md:text-sm font-bold">Eduardo Rodrigues</h1>
