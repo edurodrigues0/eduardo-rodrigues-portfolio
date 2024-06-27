@@ -5,7 +5,7 @@ import heroSvg from "public/hero.svg";
 export function Home() {
   const handleClick = () => {
     window.open(
-      "https://drive.google.com/file/d/1EJeo6wYqBBDE4-kk64-rzDFYPOOBQgTj/view?usp=sharing",
+      "https://drive.google.com/file/d/1Z2LLBOvqTbEXcwj-Td9XBz3LTvYRYiZ5/view?usp=sharing",
       "_blank",
     );
   };
