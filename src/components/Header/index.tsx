@@ -13,6 +13,11 @@ export function Header() {
         <Link title="Skills" href="#skills" />
         <Link title="Projetos" href="#projetos" />
         <Link title="Contato" href="#contato" />
+        <Link
+          title="Blog"
+          href="https://git-hub-blog-eosin.vercel.app/"
+          target="_blank"
+        />
       </nav>
     </header>
   );

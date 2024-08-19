@@ -7,8 +7,11 @@ interface ProjetctCardProps {
 
 export function ProjectCard({ doc }: ProjetctCardProps) {
   function handleGoToLink(href: string) {
-    window.open(href, "_blank");
+    href.replace("https://", "");
+    window.open("https://" + href, "_blank");
   }
+
+  console.log("link -> ", doc.data.slices[0].primary.homepage.url);
 
   return (
     <div className="relative h-96 max-lg:h-[30rem] w-72 max-lg:w-64 bg-slate-600 grid grid-rows-4 p-4 rounded-lg shadow-lg shadow-slate-700">
@@ -37,7 +40,7 @@ export function ProjectCard({ doc }: ProjetctCardProps) {
           onClick={() =>
             handleGoToLink(doc.data.slices[0].primary.homepage.url)
           }
-          className="p-2 w-full bg-slate-700 text-primary rounded-lg font-bold text-base max-sm:text-xs hover:bg-slate-700/75 transition-colors"
+          className="p-2 w-full flex items-center justify-center cursor-pointer bg-slate-700 text-primary rounded-lg font-bold text-base max-sm:text-xs hover:bg-slate-700/75 transition-colors"
         >
           Acessar
         </button>
