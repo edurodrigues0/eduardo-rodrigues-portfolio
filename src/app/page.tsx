@@ -5,7 +5,8 @@ import { client } from "@/services/prismic";
 import { Header } from "@/components/Header";
 import { NavigationBar } from "@/components/NavigationBar";
 import { Hero } from "@/components/Hero";
-
+import { About } from "@/components/About";
+import { Divider } from "@/components/Divider";
 export default function HomePage() {
   return (
     <PrismicProvider client={client}>
@@ -13,6 +14,9 @@ export default function HomePage() {
         <Header />
         <NavigationBar />
         <Hero />
+        <Divider />
+        <About />
+        <Divider />
       </div>
     </PrismicProvider>
   );
