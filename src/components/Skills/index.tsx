@@ -5,10 +5,15 @@ import {
   FaNodeJs,
   FaReact,
 } from "react-icons/fa";
+import { FaGolang } from "react-icons/fa6";
 import { IoLogoJavascript } from "react-icons/io5";
 import { BiLogoPostgresql } from "react-icons/bi";
-import { Divider } from "../Divider";
+import { RiComputerLine, RiSmartphoneLine, RiServerLine } from "react-icons/ri";
+
+import Image from "next/image";
+import codingImage from "../../public/coding.jpg";
 import { Card } from "./Card";
+import { ServicesCard } from "./ServicesCard";
 
 const skills = [
   {
@@ -68,24 +73,62 @@ const skills = [
     dominance: 30,
     color: "bg-[#088FBA]",
   },
+  {
+    id: 9,
+    title: "Golang",
+    icon: <FaGolang color="#79D4FD" />,
+    dominance: 30,
+    color: "bg-[#79D4FD]",
+  },
 ];
 
 export function Skills() {
   return (
-    <div id="skills" className="w-full flex flex-col items-center">
-      <Divider title="Skills" />
-      <div className="w-full p-16 flex gap-16 flex-wrap items-center justify-center">
-        {skills.map((skill) => {
-          return (
-            <Card
-              key={skill.id}
-              title={skill.title}
-              icon={skill.icon}
-              dominance={skill.dominance}
-              color={skill.color}
-            />
-          );
-        })}
+    <div className="relative h-screen max-xl:h-screen max-lg:h-full w-full py-16 flex flex-col items-center overflow-hidden">
+      <Image
+        className="absolute h-screen w-screen max-xl:h-full object-cover opacity-5 -mt-16"
+        src={codingImage}
+        alt="coding image"
+        width={1920}
+        height={1080}
+      />
+      <h1 className="text-5xl max-xl:text-4xl max-md:text-3xl max-sm:text-2xl text-cyan-400 font-bold">
+        Skills
+      </h1>
+      <span className="text-sm text-slate-300 mt-4 leading-relaxed">
+        Estou me esforçando para nunca parar de aprender e melhorar
+      </span>
+
+      <div className="mt-16 flex items-center max-lg:flex-col gap-16 max-xl:gap-4">
+        <ServicesCard
+          icon={RiComputerLine}
+          title="Desenvolvedor Web"
+          skills="HTML · CSS · JS · REACT.JS · NEXT.JS"
+        />
+
+        <ServicesCard
+          icon={RiSmartphoneLine}
+          title="Desenvolvedor Mobile"
+          skills="REACT NATIVE"
+        />
+
+        <ServicesCard
+          icon={RiServerLine}
+          title="Desenvolvedor Back end"
+          skills="NODE.JS · NEST.JS · GO · POSTGRESQL"
+        />
+      </div>
+
+      <div className="mt-16 w-[60rem] max-lg:w-full p-8 flex items-center gap-16 flex-wrap max-md:justify-center">
+        {skills.map((skill) => (
+          <Card
+            key={skill.id}
+            dominance={skill.dominance}
+            icon={skill.icon}
+            title={skill.title}
+            color={skill.color}
+          />
+        ))}
       </div>
     </div>
   );

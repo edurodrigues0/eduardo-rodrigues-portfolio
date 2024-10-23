@@ -8,7 +8,6 @@ import { Form } from "./Form";
 import { MdWhatsapp } from "react-icons/md";
 import { SocialCard } from "./SocialCard";
 import emailjs from "@emailjs/browser";
-import { Divider } from "../Divider";
 
 // Array de Objeto da social midia do usuario
 const socialMidias = [
@@ -73,12 +72,10 @@ export function Contact() {
   }
 
   return (
-    <div
-      id="contato"
-      className="w-full h-screen max-sm:h-full flex flex-col items-center py-10"
-    >
-      <Divider title="Contato" />
-
+    <div className="w-full h-screen max-sm:h-full flex flex-col items-center py-16 px-10">
+      <h1 className="text-5xl max-xl:text-4xl max-md:text-3xl max-sm:text-2xl text-cyan-400 font-bold">
+        Contato
+      </h1>
       <p className="mt-20 self-start text-lg max-sm:text-xs max-sm:w-1/2 max-sm:mx-auto text-slate-300">
         Sinta-se a vontade para entrar em contato comigo, será um prazer
         atende-lo.

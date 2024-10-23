@@ -2,6 +2,8 @@ import { FormEvent, MutableRefObject } from "react";
 
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { FiSend } from "react-icons/fi";
+import { Button } from "../Button";
 
 interface FormProps {
   handleSubmit: (e: FormEvent) => Promise<void>;
@@ -30,7 +32,7 @@ export function Form({
         <div className="flex max-sm:flex-col items-center justify-between gap-12 max-sm:gap-4">
           <div className="flex flex-col gap-8 max-sm:gap-4">
             <Input
-              className="w-[40rem] max-lg:w-96 max-md:w-72"
+              className="w-[40rem] max-xl:w-96 max-lg:w-72 max-md:w-72"
               type="text"
               placeholder="Seu nome"
               required
@@ -39,7 +41,7 @@ export function Form({
             />
 
             <Input
-              className="w-[40rem] max-lg:w-96 max-md:w-72"
+              className="w-[40rem] max-xl:w-96 max-lg:w-72 max-md:w-72"
               type="email"
               placeholder="Endereço de e-mail"
               required
@@ -48,7 +50,7 @@ export function Form({
             />
 
             <Input
-              className="w-[40rem] max-lg:w-96 max-md:w-72"
+              className="w-[40rem] max-xl:w-96 max-lg:w-72 max-md:w-72"
               type="text"
               placeholder="Título do e-mail"
               required
@@ -67,13 +69,15 @@ export function Form({
         </div>
 
         {!isMessageSuccess ? (
-          <button
-            disabled={isSubmiting}
+          <Button
             type="submit"
-            className="bg-primary mt-12 max-sm:mt-6 self-center w-52 max-sm:w-full font-bold p-4 rounded-md hover:bg-primaryForeground transition-colors"
+            disabled={isSubmiting}
+            variant="solid"
+            className="mt-10 max-sm:mt-6 mx-auto flex items-center text-sm font-bold"
           >
-            Enviar
-          </button>
+            Enviar mensagem
+            <FiSend size={18} />
+          </Button>
         ) : (
           <button
             disabled

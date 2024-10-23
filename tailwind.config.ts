@@ -4,6 +4,9 @@ export default {
   content: ["./src/**/*.tsx"],
   theme: {
     extend: {
+      backgroundImage: {
+        "skills-image": "url('../public/coding.jpg')",
+      },
       colors: {
         background: "#202833",
         foreground: "#FAFBFB",
@@ -12,5 +15,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: ["@tailwindcss/line-clamp"],
 };

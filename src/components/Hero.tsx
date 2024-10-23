@@ -5,16 +5,15 @@ import { InfoCard } from "./InfoCard";
 import { motion } from "framer-motion";
 
 const highlights = {
-  language: 4,
-  devTools: 6,
+  language: 2,
+  devTools: 11,
   expirience: 1,
 };
 
 export function Hero() {
   return (
-    <div className="w-full h-[910px] max-xl:h-full py-16 flex flex-col items-center">
+    <div className="w-full h-screen max-xl:h-full py-16 flex flex-col items-center">
       <motion.h1
-        id="hero"
         className="text-5xl max-xl:text-4xl max-md:text-3xl max-sm:text-2xl text-cyan-400 font-bold"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}

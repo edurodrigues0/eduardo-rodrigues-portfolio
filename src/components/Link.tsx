@@ -1,5 +1,5 @@
 import { usePathname } from "next/navigation";
-import { AnchorHTMLAttributes, useEffect, useState } from "react";
+import { AnchorHTMLAttributes, useEffect, useMemo } from "react";
 
 interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   title: string;
@@ -7,15 +7,23 @@ interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
 }
 
 export function Link({ title, href, ...rest }: LinkProps) {
-  const [isActive, setIsActive] = useState(false);
   const pathname = usePathname();
 
-  useEffect(() => {
-    pathname === href ? setIsActive(true) : setIsActive(false);
-  }, [pathname]);
+  const isActive = useMemo(() => {
+    if (pathname === href) {
+      return true;
+    }
 
-  return isActive === true ? (
+    if (href.startsWith("/blog") && pathname.startsWith("/blog")) {
+      return true;
+    }
+
+    return false;
+  }, [pathname, href]);
+
+  return isActive ? (
     <a
+      href={href}
       className="text-cyan-500 cursor-pointer font-semibold text-sm max-md:text-xs"
       {...rest}
     >

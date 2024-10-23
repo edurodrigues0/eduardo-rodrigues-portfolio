@@ -5,16 +5,14 @@ interface ProjetctCardProps {
   doc: PrismicDocument;
 }
 
-export function ProjectCard({ doc }: ProjetctCardProps) {
+export default function ProjectCard({ doc }: ProjetctCardProps) {
   function handleGoToLink(href: string) {
     href.replace("https://", "");
     window.open("https://" + href, "_blank");
   }
 
-  console.log("link -> ", doc.data.slices[0].primary.homepage.url);
-
   return (
-    <div className="relative h-96 max-lg:h-[30rem] w-72 max-lg:w-64 bg-slate-600 grid grid-rows-4 p-4 rounded-lg shadow-lg shadow-slate-700">
+    <div className="relative h-96 max-lg:h-[30rem] w-[28rem] max-lg:w-64 bg-slate-600 grid grid-rows-4 p-4 rounded-lg shadow-lg shadow-slate-700">
       <header className="w-full flex flex-col gap-3 row-span-2">
         <h1 className="mx-auto font-bold">
           {doc.data.slices[0].primary.title}
@@ -44,6 +42,7 @@ export function ProjectCard({ doc }: ProjetctCardProps) {
         >
           Acessar
         </button>
+
         <button
           disabled={!doc.data.slices[0].primary.repository.url}
           onClick={() =>

@@ -7,7 +7,10 @@ import { SearchInput } from "../SearchInput";
 export function Header() {
   return (
     <header className="w-full py-16 flex items-center justify-between border-b-2 border-slate-700">
-      <h1 className="text-2xl max-xl:text-lg max-lg:text-base max-md:text-sm max-sm:text-xs">
+      <h1
+        id="inicio"
+        className="text-2xl max-xl:text-lg max-lg:text-base max-md:text-sm max-sm:text-xs"
+      >
         <span className="text-cyan-400 mr-1">&lt;C /&gt;</span>
         EduardoRodrigues
       </h1>
@@ -15,7 +18,7 @@ export function Header() {
       <div className="flex items-center justify-center gap-16 max-lg:gap-8 max-md:gap-4  max-sm:gap-4">
         <nav className="grid grid-cols-2 gap-8 max-lg:gap-4">
           <Link href="/" title="Home" />
-          <Link href="/blogs" title="Blogs" />
+          <Link href="/blog" title="Blog" />
         </nav>
 
         <SearchInput className="max-sm:hidden max-md:hidden" />
