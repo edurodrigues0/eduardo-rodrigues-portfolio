@@ -1,5 +1,5 @@
 import Image from "next/image";
-import aboutImage from "../public/about-image.png";
+import aboutImage from "../../public/about-image.png";
 
 export function About() {
   return (

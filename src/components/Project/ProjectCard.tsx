@@ -7,8 +7,8 @@ interface ProjetctCardProps {
 
 export default function ProjectCard({ doc }: ProjetctCardProps) {
   function handleGoToLink(href: string) {
-    href.replace("https://", "");
-    window.open("https://" + href, "_blank");
+    const formattedHref = href.replace("https://", "");
+    window.open("https://" + formattedHref, "_blank");
   }
 
   return (

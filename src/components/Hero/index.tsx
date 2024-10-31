@@ -1,7 +1,7 @@
 "use client";
 
-import { Highlights } from "./Highlights";
-import { InfoCard } from "./InfoCard";
+import { Highlights } from "../Highlights";
+import { InfoCard } from "../InfoCard";
 import { motion } from "framer-motion";
 
 const highlights = {

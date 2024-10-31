@@ -23,6 +23,12 @@ const TagsList = [
 ];
 
 export function InfoCard() {
+  function handleGoToCurriculum() {
+    window.open(
+      "https://drive.google.com/file/d/1-kWjjOjpRWQfHD3FvkdcSo08Vm388zE-/view?usp=sharing",
+    );
+  }
+
   return (
     <div className="relative w-80 h-[35rem] p-6 bg-gray-800 text-white flex flex-col items-center justify-center border-2 border-cyan-500 rounded-tl-[7rem] rounded-br-[7rem]">
       <div className="absolute max:w-80 w-full max-2xl:w-72 max-xl:w-full h-[35rem] bg-cyan-500 rounded-tl-[7rem] rounded-br-[7rem] z-[-1] bottom-2 right-2" />
@@ -69,6 +75,7 @@ export function InfoCard() {
         whileTap={{ scale: 0.8 }}
         className="2xl:mt-6 max-2xl:mt-3 max-xl:mt-4 max-md:mt-6"
         variant="white"
+        onClick={() => handleGoToCurriculum()}
       >
         Download CV
         <FiDownload />

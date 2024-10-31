@@ -3,8 +3,12 @@ import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 import { Link } from "../Link";
 import { InputPopover } from "../InputPopover";
 import { SearchInput } from "../SearchInput";
+import { usePathname } from "next/navigation";
 
 export function Header() {
+  const pathname = usePathname();
+  const isBlogPath = pathname === "/blog";
+
   return (
     <header className="w-full py-16 flex items-center justify-between border-b-2 border-slate-700">
       <h1
@@ -21,7 +25,7 @@ export function Header() {
           <Link href="/blog" title="Blog" />
         </nav>
 
-        <SearchInput className="max-sm:hidden max-md:hidden" />
+        {isBlogPath && <SearchInput className="max-sm:hidden max-md:hidden" />}
 
         <InputPopover />
 

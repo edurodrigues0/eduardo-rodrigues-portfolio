@@ -1,12 +1,21 @@
 import { usePathname } from "next/navigation";
-import { AnchorHTMLAttributes, useEffect, useMemo } from "react";
+import { AnchorHTMLAttributes, ElementType, useMemo } from "react";
+import NextLink from "next/link";
 
 interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   title: string;
+  icon?: ElementType;
   href: string;
+  className?: string;
 }
 
-export function Link({ title, href, ...rest }: LinkProps) {
+export function Link({
+  title,
+  icon: Icon,
+  href,
+  className,
+  ...rest
+}: LinkProps) {
   const pathname = usePathname();
 
   const isActive = useMemo(() => {
@@ -22,20 +31,21 @@ export function Link({ title, href, ...rest }: LinkProps) {
   }, [pathname, href]);
 
   return isActive ? (
-    <a
+    <NextLink
       href={href}
-      className="text-cyan-500 cursor-pointer font-semibold text-sm max-md:text-xs"
+      className={`${"flex items-center gap-2 text-cyan-500 cursor-pointer font-semibold text-sm max-md:text-xs"}, ${className}`}
       {...rest}
     >
+      {Icon && <Icon size={24} />}
       {title}
-    </a>
+    </NextLink>
   ) : (
-    <a
+    <NextLink
       href={href}
       className="flex group font-semibold text-sm max-md:text-xs transition-all duration-200 hover:text-slate-300"
       {...rest}
     >
       {title}
-    </a>
+    </NextLink>
   );
 }
