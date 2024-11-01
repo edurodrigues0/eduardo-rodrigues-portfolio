@@ -1,11 +1,19 @@
 import { FiSearch } from "react-icons/fi";
 import { cn } from "@/lib/utils";
+import { SearchPostContext } from "@/context/SearchPostContext";
+import { useContext } from "react";
 
 type SearchInputProps = {
   className?: string;
 };
 
 export function SearchInput({ className }: SearchInputProps) {
+  const { onSearch } = useContext(SearchPostContext);
+
+  const handleSearchPost = (title: string) => {
+    onSearch(title);
+  };
+
   return (
     <div
       className={cn(
@@ -13,7 +21,10 @@ export function SearchInput({ className }: SearchInputProps) {
         className,
       )}
     >
-      <input className="w-full focus:outline-none text-slate-800 text-xs" />
+      <input
+        className="w-full focus:outline-none text-slate-800 text-xs"
+        onChange={(e) => handleSearchPost(e.target.value)}
+      />
       <button>
         <FiSearch className="text-xl text-slate-800" />
       </button>

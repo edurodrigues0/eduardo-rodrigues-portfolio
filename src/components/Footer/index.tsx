@@ -4,8 +4,12 @@ import { Link } from "../Link";
 
 export function Footer() {
   return (
-    <footer className="mt-10 w-full h-16 border-t border-slate-700 flex items-center justify-between">
-      <div className="flex gap-6 max-lg:gap-4 max-sm:hidden">
+    <footer
+      role="navigation"
+      aria-label="Footer"
+      className="mt-10 w-full h-16 border-t border-slate-700 flex items-center justify-between"
+    >
+      <div className="flex gap-6 max-lg:gap-4">
         <Link href="/" title="Home" />
         <Link href="/blog" title="Blog" />
       </div>

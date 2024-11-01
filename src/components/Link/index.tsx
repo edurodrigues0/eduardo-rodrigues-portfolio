@@ -42,7 +42,7 @@ export function Link({
   ) : (
     <NextLink
       href={href}
-      className="flex group font-semibold text-sm max-md:text-xs transition-all duration-200 hover:text-slate-300"
+      className="flex font-semibold text-sm max-md:text-xs transition-all duration-200 hover:text-slate-300"
       {...rest}
     >
       {title}

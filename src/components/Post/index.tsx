@@ -5,6 +5,17 @@ import { AiOutlineLoading3Quarters } from "react-icons/ai";
 export function Posts() {
   const [documents] = useAllPrismicDocumentsByType("posts");
 
+  if (documents?.length === 0) {
+    return (
+      <div className="flex flex-col items-center justify-center h-[400px] leading-relaxed">
+        <h1 className="text-3xl max-md:text-xl">Nenhuma postagem ainda</h1>
+        <span className="text-sm mt-10 text-slate-300">
+          Logo, logo tera conteudo fresquinho
+        </span>
+      </div>
+    );
+  }
+
   return (
     <div className="max-w-[62.5rem] w-full mt-16 border-t border-slate-700 py-16 mx-auto flex flex-col gap-16">
       {documents ? (

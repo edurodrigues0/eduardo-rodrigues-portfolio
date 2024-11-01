@@ -5,7 +5,6 @@ import { Header } from "@/components/Header";
 import { client } from "@/services/prismic";
 import { PrismicProvider } from "@prismicio/react";
 import { lazy, Suspense } from "react";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 const ArticleContent = lazy(async () => import("@/components/ArticleContent"));
 
 interface PageProps {
@@ -25,19 +24,6 @@ export default function Page({ params: { slug } }: PageProps) {
         >
           <ArticleContent slug={slug} />
         </Suspense>
-
-        <div className="flex items-center justify-between w-[720px] mx-auto border-t border-slate-700 pt-10 max-lg:w-[540px] max-sm:w-[320px]">
-          <button className="text-2xl text-cyan-500 hover:text-cyan-400">
-            {" "}
-            <FiChevronLeft />{" "}
-          </button>
-
-          <button className="text-2xl text-cyan-500 hover:text-cyan-400">
-            {" "}
-            <FiChevronRight />{" "}
-          </button>
-        </div>
-
         <Footer />
       </div>
     </PrismicProvider>

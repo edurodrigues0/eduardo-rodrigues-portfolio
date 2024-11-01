@@ -18,19 +18,21 @@ export default function HomePage() {
       <div className="max-w-[1920px] px-32 max-lg:px-24 max-md:px-16 max-sm:px-6 overflow-x-hidden">
         <Header />
         <NavigationBar />
-        <Hero />
+        <main>
+          <Hero />
 
-        <Divider id="sobre" />
-        <About />
+          <Divider id="sobre" />
+          <About />
 
-        <Divider id="skills" />
-        <Skills />
+          <Divider id="skills" />
+          <Skills />
 
-        <Divider id="projetos" />
-        <Project />
+          <Divider id="projetos" />
+          <Project />
 
-        <Divider id="contato" />
-        <Contact />
+          <Divider id="contato" />
+          <Contact />
+        </main>
 
         <Footer />
       </div>

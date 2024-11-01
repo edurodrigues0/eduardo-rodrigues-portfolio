@@ -57,7 +57,10 @@ export function NavigationBar() {
   }, [activeLink]);
 
   return (
-    <nav className="w-16 max-sm:w-12 py-2 px-3 bg-slate-900 flex flex-col items-center gap-6 rounded-full border border-white fixed top-48 left-10 z-10 max-sm:hidden">
+    <nav
+      aria-label="Topics"
+      className="w-16 max-sm:w-12 py-2 px-3 bg-slate-900 flex flex-col items-center gap-6 rounded-full border border-white fixed top-48 left-10 z-10 max-sm:hidden"
+    >
       {navLinks.map(({ id, Icon }) => (
         <NextLink
           key={id}

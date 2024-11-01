@@ -27,7 +27,7 @@ export function Header() {
 
         {isBlogPath && <SearchInput className="max-sm:hidden max-md:hidden" />}
 
-        <InputPopover />
+        {isBlogPath && <InputPopover />}
 
         <div className="flex items-center gap-8 max-lg:gap-4 max-sm:hidden">
           <NextLink href="https://github.com/edurodrigues0/" target="_blank">
