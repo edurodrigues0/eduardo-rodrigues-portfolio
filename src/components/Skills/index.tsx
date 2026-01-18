@@ -103,7 +103,7 @@ export function Skills() {
         <ServicesCard
           icon={RiComputerLine}
           title="Desenvolvedor Web"
-          skills="HTML · CSS · JS · REACT.JS · NEXT.JS"
+          skills="REACT.JS · NEXT.JS · NUXT.JS"
         />
 
         <ServicesCard
@@ -115,7 +115,7 @@ export function Skills() {
         <ServicesCard
           icon={RiServerLine}
           title="Desenvolvedor Back end"
-          skills="NODE.JS · NEST.JS · GO · POSTGRESQL"
+          skills="NODE.JS · PYTHON"
         />
       </div>
 

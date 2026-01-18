@@ -1,8 +1,8 @@
-import { PrismicDocument } from "@prismicio/client";
 import { PrismicRichText } from "@prismicio/react";
+import { ProjectDocument } from "@/types/prismic";
 
-interface ProjetctCardProps {
-  doc: PrismicDocument;
+interface ProjectCardProps {
+  doc: ProjectDocument;
 }
 
 export default function ProjectCard({ doc }: ProjetctCardProps) {

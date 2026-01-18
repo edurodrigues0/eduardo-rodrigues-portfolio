@@ -7,14 +7,14 @@ import { Button } from "../Button";
 
 interface FormProps {
   handleSubmit: (e: FormEvent) => Promise<void>;
-  isSubmiting: boolean;
+  isSubmitting: boolean;
   isMessageSuccess: boolean;
   form: MutableRefObject<HTMLFormElement>;
 }
 
 export function Form({
   handleSubmit,
-  isSubmiting,
+  isSubmitting,
   isMessageSuccess,
   form,
 }: FormProps) {
@@ -23,6 +23,7 @@ export function Form({
       className="w-full flex flex-col items-center"
       ref={form}
       onSubmit={handleSubmit}
+      aria-label="Formulário de contato"
     >
       <h1 className="max-sm:w-1/2 max-sm:mx-auto mt-12 max-sm:text-xs text-lg self-start">
         Mande um e-mail se preferir! 😉
@@ -71,20 +72,23 @@ export function Form({
         {!isMessageSuccess ? (
           <Button
             type="submit"
-            disabled={isSubmiting}
+            disabled={isSubmitting}
             variant="solid"
             className="mt-10 max-sm:mt-6 mx-auto flex items-center text-sm font-bold"
+            aria-label="Enviar mensagem"
           >
-            Enviar mensagem
+            {isSubmitting ? "Enviando..." : "Enviar mensagem"}
             <FiSend size={18} />
           </Button>
         ) : (
-          <button
-            disabled
-            className="btn mt-12 max-sm:mt-6 self-center w-52 max-sm:w-full p-4 rounded-md font-bold disabled:bg-green-700 disabled:text-green-50"
+          <div
+            className="mt-12 max-sm:mt-6 self-center w-52 max-sm:w-full p-4 rounded-md font-bold bg-green-700 text-green-50 text-center"
+            role="status"
+            aria-live="polite"
+            aria-label="Mensagem enviada com sucesso"
           >
-            Success!
-          </button>
+            Mensagem enviada!
+          </div>
         )}
       </div>
     </form>

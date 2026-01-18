@@ -7,9 +7,9 @@ export function Footer() {
     <footer
       role="navigation"
       aria-label="Footer"
-      className="mt-10 w-full h-16 border-t border-slate-700 flex items-center justify-between"
+      className="mt-16 w-full h-16 border-t border-slate-700 flex items-center justify-between max-sm:justify-center"
     >
-      <div className="flex gap-6 max-lg:gap-4">
+      <div className="flex gap-6 max-lg:gap-4 max-sm:hidden">
         <Link href="/" title="Home" />
         <Link href="/blog" title="Blog" />
       </div>

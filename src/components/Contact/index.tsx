@@ -44,31 +44,38 @@ const socialMidias = [
 export function Contact() {
   const form = useRef() as MutableRefObject<HTMLFormElement>;
   const [isMessageSuccess, setIsMessageSuccess] = useState(false);
-  const [isSubmiting, setIsSubmiting] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  // funcao para mail trap do emailJS
+  // Função para envio de email via EmailJS
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    setIsSubmiting(true);
+    setIsSubmitting(true);
+    setError(null);
 
-    await emailjs
-      .sendForm(
+    try {
+      const response = await emailjs.sendForm(
         ENV.NEXT_PUBLIC_EMAILJS_ID,
         "template_cfkr9xa",
         form.current,
-        ENV.NEXT_PUBLIC_EMAILJS_PUBLICK_KEY,
-      )
-      .then(
-        (res) => {
-          if (res.status === 200) {
-            return setIsMessageSuccess(true);
-          }
-        },
-        (error) => {
-          console.log(error);
-        },
+        ENV.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
       );
-    setIsSubmiting(false);
+
+      if (response.status === 200) {
+        setIsMessageSuccess(true);
+        form.current.reset();
+      } else {
+        setError("Erro ao enviar mensagem. Tente novamente.");
+      }
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Erro ao enviar mensagem. Por favor, tente novamente mais tarde.",
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -99,10 +106,19 @@ export function Contact() {
       </div>
 
       {/* Formulario */}
+      {error && (
+        <div
+          className="mt-6 p-4 bg-red-900/20 border border-red-500 rounded-lg text-red-300"
+          role="alert"
+          aria-live="polite"
+        >
+          <p className="text-sm">{error}</p>
+        </div>
+      )}
       <Form
         handleSubmit={handleSubmit}
         isMessageSuccess={isMessageSuccess}
-        isSubmiting={isSubmiting}
+        isSubmitting={isSubmitting}
         form={form}
       />
     </div>

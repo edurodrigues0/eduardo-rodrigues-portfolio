@@ -8,45 +8,78 @@ export function About() {
         Sobre
       </h1>
 
-      <div className="mt-16 w-full flex items-end justify-around max-xl:justify-center max-xl:flex-col max-xl:items-center max-xl:gap-16 max-lg:gap-10 max-md:gap-8">
-        {/* Texto */}
-        <div className="max-w-2xl w-full flex flex-col items-start max-xl:items-center">
-          <h1 className="inline-block bg-slate-700 text-4xl mb-16 py-4 px-6 rounded-tl-[3rem] rounded-br-[3rem] border-2 border-cyan-500 max-2xl:text-2xl max-2xl:mb-8 max-md:text-lg">
-            Um pouco sobre mim
-          </h1>
+      <div className="mt-16 w-full px-4 max-lg:px-6 max-md:px-4 max-sm:px-2">
+        <div className="grid grid-cols-2 max-xl:grid-cols-1 gap-8 max-xl:gap-8 max-lg:gap-6 max-md:gap-4 max-w-[1440px] mx-auto items-stretch">
+          {/* Texto */}
+          <div className="w-full flex flex-col items-start max-xl:items-center">
+            <h1 className="inline-block bg-slate-700 text-4xl mb-16 py-4 px-6 rounded-tl-[3rem] rounded-br-[3rem] border-2 border-cyan-500 max-2xl:text-2xl max-2xl:mb-8 max-md:text-lg max-xl:mb-8">
+              Um pouco sobre mim
+            </h1>
 
-          <div className="py-6 px-10 w-[800px] max-2xl:w-[600px] max-xl:w-[500px] max-lg:w-full bg-slate-900 rounded-xl flex flex-col gap-4 leading-relaxed">
+            <div className="py-6 px-10 w-full max-xl:w-full bg-slate-900 rounded-xl flex flex-col gap-4 leading-relaxed">
             <span className="text-sm text-cyan-500">&lt;p&gt;</span>
             <p>
               <span className="text-cyan-500 text-4xl">Olá!</span> <br />
-              Eu sou Eduardo Rodrigues, moro em Sacramento, Brasil. Como
-              desenvolvedor full-stack, tenho uma paixão por criar e
-              personalizar websites, bem como desenvolver APIs robustas para
-              suportar uma variedade de aplicações web e móveis. Ao longo dos
-              anos, acumulei uma ampla gama de habilidades nesse campo. Minha
-              expertise abrange o uso de tecnologias, como{" "}
-              <span className="text-cyan-500">
-                React JS, React Native, Next JS e Node JS{" "}
+              Eu sou Eduardo Rodrigues, Desenvolvedor Full Stack apaixonado por
+              criar soluções digitais de alto impacto.<br />
+              <br />
+              Minha stack principal inclui{" "}
+              <span className="text-cyan-500 font-semibold">
+                React JS
+              </span>
+              ,{" "}
+              <span className="text-cyan-500 font-semibold">
+                React Native
+              </span>
+              ,{" "}
+              <span className="text-cyan-500 font-semibold">
+                Next.js
+              </span>
+              ,{" "}
+              <span className="text-cyan-500 font-semibold">
+                Nuxt.js
+              </span>
+              ,{" "}
+              <span className="text-cyan-500 font-semibold">
+                Node.js
               </span>{" "}
-              Sou entusiasta por games, futebol e academia, e adoro canalizar
-              minha criatividade em transformar ideias malucas em códigos
-              relacionado a esses assuntos. Estou sempre buscando aprender e me
-              atualizar para enfrentar novos desafios e contribuir de maneira
-              significativa para projetos empolgantes e inovadores.
+              e{" "}
+              <span className="text-cyan-500 font-semibold">
+                Python
+              </span>
+              . Especializo-me em construir aplicações web modernas, sistemas
+              mobile nativos e APIs RESTful robustas que atendem às necessidades
+              de negócios em escala. <br />
+              <br />
+              Além do código, integro{" "}
+              <span className="text-cyan-500 font-semibold">
+                Inteligência Artificial
+              </span>{" "}
+              em meu workflow de desenvolvimento para acelerar a entrega de
+              projetos, otimizar código, gerar documentação e automatizar tarefas
+              repetitivas. Essa abordagem me permite focar em resolver problemas
+              complexos e agregar valor real aos produtos. <br />
+              <br />
+              Sou entusiasta por tecnologia, sempre em busca de novas tendências e
+              melhores práticas. Minha dedicação em resolver problemas de forma
+              eficiente, combinada com o uso estratégico de IA e minha capacidade
+              de trabalhar em equipe, fazem de mim um profissional diferenciado
+              para projetos desafiadores e inovadores.
             </p>
             <span className="text-sm text-cyan-500">&lt;/p&gt;</span>
           </div>
         </div>
 
-        {/* Imagem */}
-        <div className="flex-shrink-0 max-w-sm">
-          <Image
-            src={aboutImage}
-            alt="coding"
-            width={462}
-            height={556}
-            className="object-contain max-w-full max-h-[500px]"
-          />
+          {/* Imagem */}
+          <div className="w-full h-full flex items-center justify-center max-xl:justify-center">
+            <Image
+              src={aboutImage}
+              alt="coding"
+              width={600}
+              height={800}
+              className="object-contain w-full h-full"
+            />
+          </div>
         </div>
       </div>
     </div>

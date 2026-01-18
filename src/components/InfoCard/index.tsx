@@ -19,7 +19,7 @@ const TagsList = [
   "Nest.js",
   "Tailwidcss",
   "Styled-components",
-  "GO",
+  "Python",
 ];
 
 export function InfoCard() {

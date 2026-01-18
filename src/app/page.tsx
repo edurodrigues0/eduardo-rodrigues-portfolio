@@ -15,7 +15,7 @@ import { Footer } from "@/components/Footer";
 export default function HomePage() {
   return (
     <PrismicProvider client={client}>
-      <div className="max-w-[1920px] px-32 max-lg:px-24 max-md:px-16 max-sm:px-6 overflow-x-hidden">
+      <div className="max-w-[1440px] mx-auto px-32 max-lg:px-24 max-md:px-16 max-sm:px-6 overflow-x-hidden">
         <Header />
         <NavigationBar />
         <main>

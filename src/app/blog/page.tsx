@@ -12,7 +12,7 @@ export default function Blog() {
   return (
     <SearchPostContextProvider>
       <PrismicProvider client={client}>
-        <div className="max-w-[1920px] px-32 max-lg:px-24 max-md:px-16 max-sm:px-6 overflow-x-hidden">
+        <div className="max-w-[1440px] mx-auto px-32 max-lg:px-24 max-md:px-16 max-sm:px-6 overflow-x-hidden">
           <Header />
           <main>
             <div className="mt-32 flex flex-col items-center gap-6">

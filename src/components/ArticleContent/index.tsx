@@ -1,41 +1,38 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import { PrismicRichText, usePrismicDocumentByUID } from "@prismicio/react";
 import Image from "next/image";
 import { FiChevronLeft } from "react-icons/fi";
 import { Link } from "../Link";
-import { PrismicDocument, RichTextField } from "@prismicio/client";
+import { RichTextField } from "@prismicio/client";
 import { AiOutlineLoading } from "react-icons/ai";
+import { PostDocument } from "@/types/prismic";
 
 interface ArticleContentProps {
   slug: string;
 }
 
-interface Document
-  extends PrismicDocument<Record<string, any>, string, string> {
-  data: {
-    title: string;
-    content: RichTextField | any[] | null | undefined;
-    banner: {
-      url: string;
-      alt: string;
-    };
-  };
-}
-
 export default function ArticleContent({ slug }: ArticleContentProps) {
-  const [document] = usePrismicDocumentByUID<Document>("posts", slug);
-  console.log(document);
+  const [document, { state, error }] = usePrismicDocumentByUID<PostDocument>(
+    "posts",
+    slug,
+  );
 
-  function calculateReadingTime(): number {
+  function calculateReadingTime(content: RichTextField): number {
     const wordsPerMinute = 200;
-    const content = document?.data.content?.map((con) => con.text);
-    const allWords = content?.reduce((acc, curr) => (acc += curr));
+    
+    // Extrai o texto do RichTextField
+    const textContent = content
+      .map((block) => {
+        if ("text" in block) {
+          return block.text;
+        }
+        return "";
+      })
+      .join(" ");
 
-    const words = String(allWords).trim().split(/\s+/).length;
+    const words = textContent.trim().split(/\s+/).filter(Boolean).length;
     const readingTime = Math.ceil(words / wordsPerMinute);
 
-    return readingTime;
+    return readingTime || 1; // Retorna pelo menos 1 minuto
   }
 
   return (
@@ -47,7 +44,35 @@ export default function ArticleContent({ slug }: ArticleContentProps) {
         icon={FiChevronLeft}
       />
 
-      {document ? (
+      {state === "loading" && (
+        <div className="w-full h-[400px] flex items-center justify-center">
+          <AiOutlineLoading className="text-7xl text-cyan-500 animate-spin" />
+        </div>
+      )}
+
+      {state === "failed" && (
+        <div className="w-full h-[400px] flex flex-col items-center justify-center gap-4">
+          <h2 className="text-2xl text-red-400 font-semibold">
+            Erro ao carregar post
+          </h2>
+          <p className="text-slate-300">
+            {error?.message || "Não foi possível carregar o conteúdo."}
+          </p>
+        </div>
+      )}
+
+      {state === "loaded" && !document && (
+        <div className="w-full h-[400px] flex flex-col items-center justify-center gap-4">
+          <h2 className="text-2xl text-yellow-400 font-semibold">
+            Post não encontrado
+          </h2>
+          <p className="text-slate-300">
+            O post que você está procurando não existe ou foi removido.
+          </p>
+        </div>
+      )}
+
+      {state === "loaded" && document && (
         <>
           <header className="flex flex-col gap-4">
             <h1 className="text-cyan-500 text-2xl font-semibold">
@@ -69,7 +94,7 @@ export default function ArticleContent({ slug }: ArticleContentProps) {
               <span className="font-bold">
                 Leitura{" "}
                 <span className="font-normal text-sm">
-                  {calculateReadingTime()} min
+                  {calculateReadingTime(document.data.content)} min
                 </span>
               </span>
             </div>
@@ -79,7 +104,7 @@ export default function ArticleContent({ slug }: ArticleContentProps) {
             <Image
               src={document.data.banner.url}
               className="w-full h-72 object-fill"
-              alt={document.data.banner.alt || ""}
+              alt={document.data.banner.alt || document.data.title}
               height={400}
               width={400}
             />
@@ -89,10 +114,6 @@ export default function ArticleContent({ slug }: ArticleContentProps) {
             </main>
           </div>
         </>
-      ) : (
-        <div className="w-full h-[400px] flex items-center justify-center">
-          <AiOutlineLoading className="text-7xl text-cyan-500 animate-spin" />
-        </div>
       )}
     </article>
   );
